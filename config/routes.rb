@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get 'dialogs/index'
+  devise_for :users
   root to:"dialogs#index"
+  resources :dialogs
 end
