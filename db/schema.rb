@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2023_06_09_103121) do
     t.bigint "user_id", null: false
     t.string "language", null: false
     t.string "translation", null: false
+    t.text "memo"
     t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
