@@ -68,3 +68,6 @@ gem 'devise'
 gem 'active_hash'
 
 gem 'carrierwave'
+
+gem 'audiojs-rails'
+

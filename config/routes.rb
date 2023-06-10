@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
   root to:"dialogs#index"
-  resources :dialogs, only: [:index, :new, :create]
+  resources :dialogs, only: [:index, :new, :create, :show]
 end

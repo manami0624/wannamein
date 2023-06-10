@@ -148,6 +148,7 @@
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
 				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Dialogs</h2>
+        <% @dialogs.each do |dialog| %>
 				<div class="row row-bottom-padded-md">
 					<div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
 						<div class="blog-entry">
@@ -155,14 +156,18 @@
 							<div class="desc">
 								<h3><a href="#"></a></h3>
                   <div class="card__body">
-                   <%= link_to "한국어", root_path, class: :card__title%>
+                   <%= link_to "한국어", root_path(dialog.id), class: :card__title%>
                   <p class="card__summary">
                    <%= link_to "日本語", root_path, class: :lead %>
                   </p>
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
-  <path d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5z"/>
-</svg><a href="#" class="lead">Play </a>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headphones" viewBox="0 0 16 16">
+                    <path d="M8 3a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a6 6 0 1 1 12 0v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1V8a5 5 0 0 0-5-5z"/>
+                  </svg>
+                  <%# <a href="#" class="lead">Play </a> %>
+                  <audio src="<%= "#{dialog.file}" %>" controls="">
+                  <a src="<%= "#{dialog.file}" %>">Play </a>
 							</div>
+              <%end%>
 						</div>
 					</div>
 <!--Dialogs Ending-->

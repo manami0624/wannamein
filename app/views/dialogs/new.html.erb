@@ -5,7 +5,6 @@
       <div class="form-item">
         <%= form.label :category, "カテゴリー" %><br />
         <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"dialog-category"}) %>
-        <%# <%= form.select :category, options_for_select(['カテゴリー1', 'カテゴリー2', 'カテゴリー3']) %> 
       </div>
       <div class="form-item">
         <%= form.label :language, "한국어" %><br />
@@ -23,7 +22,7 @@
         <%= form.label :memo, "memo" %><br />
         <%= form.text_area :memo, rows: "10" %>
       </div>
-      <%= form.submit "SEND", class: "form__btn" %>
+      <%= form.submit "保存する", class: "form__btn" %>
     <% end %>
   </div>
 </div>
