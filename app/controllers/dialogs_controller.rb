@@ -16,6 +16,9 @@ class DialogsController < ApplicationController
     end
   end
 
+  def show
+  end
+
 
   private
   def dialog_params
