@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2023_06_09_103121) do
     t.string "translation", null: false
     t.text "memo"
     t.integer "category_id"
+    t.string "file"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_dialogs_on_user_id"

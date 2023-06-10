@@ -10,15 +10,18 @@ class DialogsController < ApplicationController
   def create
     @dialog = Dialog.new(dialog_params)
     if @dialog.save
-      redirect_to root_path
+      redirect_to dialogs_path, notice: '投稿が保存されました。'
     else
       render :new
     end
   end
 
-  private
+  def show
+  end
 
-  def article_params
-    params.require(:dialog).permit(:language,:translation,:category_id)
+
+  private
+  def dialog_params
+    params.require(:dialog).permit(:language, :translation, :memo, :category_id, :file).merge(user_id: current_user.id)
   end
 end
