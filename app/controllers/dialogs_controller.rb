@@ -1,4 +1,5 @@
 class DialogsController < ApplicationController
+  before_action :set_dialog, only: [:edit, :show, :destroy, :update]
   def index
     @dialogs = Dialog.all
   end
@@ -10,7 +11,7 @@ class DialogsController < ApplicationController
   def create
     @dialog = Dialog.new(dialog_params)
     if @dialog.save
-      redirect_to dialogs_path, notice: '投稿が保存されました。'
+      redirect_to root_path
     else
       render :new
     end
@@ -19,20 +20,28 @@ class DialogsController < ApplicationController
   def edit
   end
 
+  def update
+    if @dialog.update(dialog_params)
+      redirect_to root_path
+    end
+  end
+
   def destroy
-    @dialog = Dialog.find(params[:id])
     if @dialog.destroy
       redirect_to root_path
     end
   end
 
   def show
-    @dialog = Dialog.find(params[:id])
   end
 
 
   private
   def dialog_params
     params.require(:dialog).permit(:language, :translation, :memo, :category_id, :file).merge(user_id: current_user.id)
+  end
+
+  def set_dialog
+    @dialog = Dialog.find(params[:id])
   end
 end
