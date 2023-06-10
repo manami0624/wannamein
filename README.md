@@ -19,8 +19,8 @@
 | Column           | Type       | Options                        |
 | -----------------| ---------- | ------------------------------ |
 | user             | references | null: false, foreign_key: true |
-| text             | string     | null: false                    |
-| memo             | text       | null: false                    |
+| language         | string     | null: false                    |
+| translation      | string     | null: false                    |
 | category_id      | integer    | null: false                    |
 | audio            | string     |                                |
 
