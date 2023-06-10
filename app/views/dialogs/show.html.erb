@@ -1,0 +1,26 @@
+<div class="contents row">
+  <div class="more">
+    <ul class="more_list">
+      <li>
+        <%= link_to '編集', edit_dialog_path(@dialog.id), method: :get %>
+      </li>
+      <li>
+        <%= link_to '削除', dialog_path(@dialog.id), method: :delete %>
+      </li>
+    </ul>
+  </div>
+  
+  <a href="#" class="another-item"><%= @dialog.category.name %>の会話をもっと見る</a>
+  <p><%= @dialog.language %></p>
+  <span class="name">
+    <%= @dialog.translation %>
+  </span>
+
+  <% if @dialog.file.present? %>
+    <audio src="<%= @dialog.file.url %>" controls></audio>
+  <% end %>
+
+  <% if @dialog.memo.present? %>
+    <p><%= @dialog.memo %></p>
+  <% end %>
+</div>

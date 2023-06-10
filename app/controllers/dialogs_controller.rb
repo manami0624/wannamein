@@ -16,7 +16,18 @@ class DialogsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def destroy
+    @dialog = Dialog.find(params[:id])
+    if @dialog.destroy
+      redirect_to root_path
+    end
+  end
+
   def show
+    @dialog = Dialog.find(params[:id])
   end
 
 

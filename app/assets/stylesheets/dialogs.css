@@ -166,3 +166,66 @@ select {
   background-color: #000000;
   cursor: pointer;
 }
+
+/* 詳細画面 */
+ body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.contents {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.more_list li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.more_list li a {
+  color: #999;
+  text-decoration: none;
+}
+
+.more_list li a:hover {
+  text-decoration: underline;
+}
+
+.another-item {
+  display: block;
+  color: #777;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.another-item:hover {
+  text-decoration: underline;
+}
+
+p, .name {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+audio {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+
+
+@media (max-width: 767px) {
+  .contents {
+    padding: 10px;
+  }
+}
