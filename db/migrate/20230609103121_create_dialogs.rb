@@ -6,6 +6,7 @@ class CreateDialogs < ActiveRecord::Migration[6.0]
       t.string       :translation, null: false
       t.text         :memo
       t.integer      :category_id, nill: false
+      t.string       :file
       t.timestamps
     end
   end

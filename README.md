@@ -22,7 +22,7 @@
 | language         | string     | null: false                    |
 | translation      | string     | null: false                    |
 | category_id      | integer    | null: false                    |
-| audio            | string     |                                |
+| file             | string     |                                |
 
 ### Association
 - belongs_to :user

@@ -18,7 +18,7 @@ class DialogsController < ApplicationController
 
   private
 
-  def article_params
-    params.require(:dialog).permit(:language,:translation,:category_id)
+  def dialog_params
+    params.require(:dialog).permit(:language, :translation, :category_id, :file)
   end
 end
