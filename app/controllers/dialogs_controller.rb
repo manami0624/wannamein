@@ -1,5 +1,5 @@
 class DialogsController < ApplicationController
-  before_action :set_dialog, only: [:edit, :show, :destroy, :update]
+  before_action :set_dialog, only: [:edit, :show, :update]
   def index
     @dialogs = Dialog.all
   end
@@ -27,9 +27,9 @@ class DialogsController < ApplicationController
   end
 
   def destroy
-    if @dialog.destroy
-      redirect_to root_path
-    end
+    dialog = Dialog.find(params[:id])
+    dialog.destroy
+    redirect_to root_path
   end
 
   def show
