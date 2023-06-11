@@ -29,6 +29,7 @@ class DialogsController < ApplicationController
   def destroy
     dialog = Dialog.find(params[:id])
     dialog.destroy
+    redirect_to root_path
   end
 
   def show
