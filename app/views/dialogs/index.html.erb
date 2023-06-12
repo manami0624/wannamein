@@ -48,7 +48,7 @@
          <!-- Post preview-->
         <div class="post-preview">
           <a href="post.html">
-            <h2 class="post-title">Category</h2>
+            <h2 class="post-title">記事一覧</h2>
             <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
           </a>
             <p class="post-meta">
@@ -76,12 +76,17 @@
         <!-- Divider-->
                     <hr class="my-4" />
                   <% end %>
-        <!-- Pager-->
-										<% if user_signed_in? %>
-                    <div class="d-flex justify-content-end mb-4"><%= link_to "投稿する", new_dialog_path, class:"btn btn-primary text-uppercase" %></div>
-										<% else %>
-										<div class="d-flex justify-content-end mb-4"><%= link_to "投稿する", new_user_session_path, class:"btn btn-primary text-uppercase" %></div>
-										<% end %>
+									
+        <!-- post btn-->
+								<% if user_signed_in? %>
+                  <% link_path = new_dialog_path %>
+                <% else %>
+                  <% link_path = new_user_session_path %>
+                <% end %>
+                <%= link_to(link_path, class: 'post-btn') do %>
+                  <span class='post-btn-text'>投稿する</span>
+									<%= image_tag 'pen.png' , size: '185x50' ,class: "post-btn-icon" %>
+                <% end %>
                 </div>
             </div>
         </div>
