@@ -1,28 +1,7 @@
-<div class="contents row">
-  <div class="form__wrapper">
-    <h3>投稿する</h3>
-    <%= form_with(model: @dialog, local: true) do |form| %>
-      <div class="form-item">
-        <%= form.label :category, "カテゴリー" %><br />
-        <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"dialog-category"}) %>
-      </div>
-      <div class="form-item">
-        <%= form.label :language, "한국어" %><br />
-        <%= form.text_field :language %>
-      </div>
-      <div class="form-item">
-        <%= form.label :translation, "日本語" %><br />
-        <%= form.text_field :translation %>
-      </div>
-      <div class="form-item">
-        <%= form.label :file, "Voice" %><br />
-        <%= form.file_field :file, :size => 140 %>
-      </div>
-      <div class="form-item">
-        <%= form.label :memo, "memo" %><br />
-        <%= form.text_area :memo, rows: "10" %>
-      </div>
-      <%= form.submit "保存する", class: "form__btn" %>
-    <% end %>
-  </div>
+<div class="form__wrapper">
+  <h3>投稿する</h3>
+    <%= render "shared/form"%>
 </div>
+ 
+<!-- Footer-->
+<%= render "shared/footer"%>
