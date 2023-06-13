@@ -207,6 +207,29 @@ p {
   margin-bottom: 0;
 }
 
+/* 投稿ボタンのスタイル */
+.post-btn {
+  width: 120px;
+  background: #343434;
+  text-align: center;
+  border-radius: 30%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.post-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.post-btn-icon {
+  width: 60%;
+}
 
 
 @media (max-width: 767px) {
@@ -214,3 +237,4 @@ p {
     padding: 10px;
   }
 }
+

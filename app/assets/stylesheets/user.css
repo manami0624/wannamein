@@ -112,3 +112,10 @@
   padding: 0;
   font-size: 13px;
 }
+
+@media (max-width: 767px) {
+  .contents {
+    padding: 10px;
+  }
+}
+
