@@ -1,18 +1,17 @@
-* {
-  box-sizing: border-box;
-}
-
 .search-form {
   width: 30vw;
   height: 5vh;
   display: flex;
   margin-bottom: 5px;
+  background-color: transparent;
 }
 
-.search-form>.input-box {
-  width: 30%;
+.search-form .search-input {
+  width: 70%;
   height: 5vh;
   padding-left: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #333333
 }
 
 .search-button {
@@ -21,6 +20,7 @@
   cursor: pointer;
   background-color: #333333;
   padding: 8px;
+  border-radius: 0 5px 5px 0;
 }
 
 .search-icon {
