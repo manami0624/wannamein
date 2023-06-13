@@ -180,12 +180,12 @@ select {
   text-align: center;
   text-decoration: underline;
 }
-.prototype__image{
+.dialog__image{
   width: 40%;
   margin: 0 auto;
   padding: 16px 0;
 }
-.prototype__detail{
+.dialog__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -195,7 +195,7 @@ select {
   font-size: 20px;
   font-weight: bold;
 }
-.prototype__manage{
+.dialog__manage{
   display: flex;
   justify-content: center;
   padding-top: 16px;
