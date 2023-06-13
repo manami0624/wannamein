@@ -48,34 +48,46 @@
          <!-- Post preview-->
         <div class="post-preview">
           <a href="post.html">
-            <h2 class="post-title">記事一覧</h2>
-            <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
-          </a>
-            <p class="post-meta">
-            Posted by
-            <a href="#!">Start Bootstrap</a>
-            on September 24, 2023
-          </p>
+            <h2 class="post-title">カテゴリー</h2>
+						<div class="category__btns">
+						  <%= link_to dialogs_path(category_id: 2), class: 'category__btn' do %>仕事
+							 <% end %>
+              <%= link_to dialogs_path(category_id: 3), class: 'category__btn' do %>学校
+              <% end %>
+              <%= link_to dialogs_path(category_id: 4), class: 'category__btn' do %>食事
+              <% end %>
+              <%= link_to dialogs_path(category_id: 5), class: 'category__btn' do %>メッセージ
+              <% end %>
+              <%= link_to dialogs_path(category_id: 6), class: 'category__btn' do %>電話
+              <% end %>
+              <%= link_to dialogs_path(category_id: 7), class: 'category__btn' do %>病院・薬局
+              <% end %>
+              <%= link_to dialogs_path(category_id: 8), class: 'category__btn' do %>恋愛
+              <% end %>
+              <%= link_to dialogs_path(category_id: 9), class: 'category__btn' do %>名言
+              <% end %>
+						</div>
+
         </div>
         <!-- Divider-->
-                    <hr class="my-4" />
+			  <hr class="my-4" />
         <!-- Post preview-->
-									<% @dialogs.each do |dialog| %>
-                    <div class="post-preview">
-                        <div class="post.html">
-                            <h2 class="post-title"><%= link_to dialog.language, dialog_path(dialog.id), method: :get %></h2>
-                            <h3 class="post-subtitle"><%= link_to dialog.translation, dialog_path(dialog.id), method: :get %></h3>
-                             <audio src="<%= "#{dialog.file}" %>" controls="">
-                             <a src="<%= "#{dialog.file}" %>"> </a>
-                        </div>
-                        <p class="post-meta">
-                            Category
-                            <a href="#!"><%= link_to dialog.category.name %></a>
-                        </p>
-                    </div>
+				<% @dialogs.each do |dialog| %>
+          <div class="post-preview">
+            <div class="post.html">
+              <h2 class="post-title"><%= link_to dialog.language, dialog_path(dialog.id), method: :get %></h2>
+              <h3 class="post-subtitle"><%= link_to dialog.translation, dialog_path(dialog.id), method: :get %></h3>
+              <audio src="<%= "#{dialog.file}" %>" controls="">
+              <a src="<%= "#{dialog.file}" %>"> </a>
+            </div>
+            <p class="post-meta">
+              Category
+            <a href="#!"><%= link_to dialog.category.name %></a>
+            </p>
+          </div>
         <!-- Divider-->
-                    <hr class="my-4" />
-                  <% end %>
+        <hr class="my-4" />
+        <% end %>
 									
         <!-- post btn-->
 								<% if user_signed_in? %>
