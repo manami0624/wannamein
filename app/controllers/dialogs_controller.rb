@@ -1,5 +1,7 @@
 class DialogsController < ApplicationController
   before_action :set_dialog, only: [:edit, :show, :update]
+  before_action :move_to_index, except: [:index, :show, :search]
+
   def index
     @dialogs = Dialog.all
   end
@@ -35,6 +37,11 @@ class DialogsController < ApplicationController
   def show
   end
 
+  def search
+    @dialogs = Dialog.search(params[:keyword])
+
+  end
+
 
   private
   def dialog_params
@@ -43,5 +50,11 @@ class DialogsController < ApplicationController
 
   def set_dialog
     @dialog = Dialog.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end

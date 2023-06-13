@@ -1,0 +1,40 @@
+<!-- Page Header-->
+<%= render "shared/header"%>
+<header class="show__header"></header>
+
+<% @dialogs.each do |dialog| %>
+<div class="dialog__wrapper">
+  <div class="dialog__manage">
+    <% if user_signed_in? %>
+      <%= link_to '編集する', edit_dialog_path(dialog.id), method: :get, class: :dialog__btn %>
+      <%= link_to '削除する', dialog_path(dialog.id), method: :delete, class: :dialog__btn %>
+    <% end %>
+  </div>
+
+  <p class="dialog__hedding"><%= dialog.language %></p>
+  
+  <div class="translation">
+    <%= dialog.translation %>
+  </div>
+
+  <div class="dialog__image">
+    <audio src="<%= dialog.file.url %>" controls></audio>
+  </div>
+
+  <div class="dialog__detail">
+    <p class="detail__title">memo</p>
+    <p class="detail__message"><%= dialog.memo %></p>
+  </div>
+
+  <div class="dialog__category">
+    <%= dialog.category.name %>の会話をもっと見る
+  </div>
+  
+  <div class="dialog__manage">
+    <%= link_to '戻る', root_path, method: :get, class: :dialog__btn %>
+  </div>
+</div>
+<%end%>
+
+<!-- Footer-->
+<%= render "shared/footer"%>
