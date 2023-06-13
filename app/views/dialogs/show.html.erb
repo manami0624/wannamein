@@ -1,49 +1,9 @@
+<!-- Page Header-->
+<%= render "shared/header"%>
+<header class="show__header"></header>
 
-<!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-      <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="index.html"><%= @dialog.category.name %>の会話</a>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-             Menu
-            <i class="fas fa-bars"></i>
-         </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto py-4 py-lg-0">
-            <% if user_signed_in? %>
-                <li class="nav-item"><%= link_to '編集', edit_dialog_path(@dialog.id), method: :get, class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
-                <li class="nav-item"><%= link_to '削除', dialog_path(@dialog.id), method: :delete, class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
-            <% end %>
-                <li class="nav-item"><%= link_to 'TOPへ戻る', root_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
-           </ul>
-        </div>
-      </div>
-  </nav>
+<!-- dialog 詳細ページ -->
+<%=render "shared/dialog"%>
 
-   <!-- Page Header-->
-    <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
-      <div class="container position-relative px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-md-10 col-lg-8 col-xl-7">
-            <div class="site-heading">
-              <h1><%= @dialog.language %></h1>
-
-                <% if @dialog.file.present? %>
-                <audio src="<%= @dialog.file.url %>" controls></audio>
-               <% end %>
-
-              <span class="subheading"><%= @dialog.translation %></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-
-<div class="contents row">
-  <% if @dialog.memo.present? %>
-    <p><%= @dialog.memo %></p>
-  <% end %>
-</div>
-
-  <!-- Footer-->
-  <%= render "shared/footer"%>
+<!-- Footer-->
+<%= render "shared/footer"%>

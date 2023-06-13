@@ -27,9 +27,9 @@
 						<div class="post-heading">
              <%# <div class="site-heading"> %>
                <h1>Wanna Me In?</h1>
-							 <span class="subheading"><h5>원어민（=Native Speaker）のように話したい</h5></span>
+							 <span class="subheading"><h5>원어민（Native Speaker）のように話したい</h5></span>
 							 <h2 class="subheading">
-							   <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
+							   <%= form_with(url: search_dialogs_path, local: true, method: :get, class: "search-form") do |form| %>
                  <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
 	              <button class="search-button"><%= image_tag "search.png", class:"search-icon" %></button>
                 <% end %>
