@@ -22,7 +22,9 @@
   </div>
 
   <div class="dialog__category">
-    <%= @dialog.category.name %>の会話をもっと見る
+    <%= link_to dialogs_path(category_id: @dialog.category.id) do %>
+    <%= "#{@dialog.category.name}の会話をもっとみる" %>
+    <% end %>
   </div>
   
   <div class="dialog__manage">
