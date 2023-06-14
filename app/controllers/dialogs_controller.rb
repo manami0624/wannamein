@@ -3,13 +3,11 @@ class DialogsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    def index
-      if params[:category_id].present?
-        @category = Category.find(params[:category_id])
-        @dialogs = @category.dialogs
-      else
-        @dialogs = Dialog.all
-      end
+    if params[:category_id].present?
+      @category = Category.find(params[:category_id])
+      @dialogs = @category.dialogs
+    else
+      @dialogs = Dialog.all
     end
   end
 
@@ -46,6 +44,10 @@ class DialogsController < ApplicationController
 
   def search
     @dialogs = Dialog.search(params[:keyword])
+    keyword = params[:keyword].to_s.strip
+    if keyword.empty?
+      redirect_to root_path
+    end
   end
 
   def category
