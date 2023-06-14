@@ -13,7 +13,11 @@
   </div>
 
   <div class="dialog__image">
-    <audio src="<%= @dialog.file.url %>" controls></audio>
+  <td>
+    <% if @dialog.file.present? %>
+    <%= audio_tag @dialog.file_url, :controls => true %>
+    <% end %>
+  </td>
   </div>
 
   <div class="dialog__detail">
