@@ -72,3 +72,5 @@ gem 'carrierwave'
 gem 'audiojs-rails'
 
 gem 'cloudinary'
+
+gem 'dotenv-rails'
