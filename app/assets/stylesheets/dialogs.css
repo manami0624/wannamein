@@ -198,6 +198,7 @@ select {
   color: #999;
   text-align: center;
   text-decoration: underline;
+  text-decoration: none;
 }
 .dialog__image{
   width: 40%;
