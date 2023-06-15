@@ -1,39 +1,26 @@
-<!-- Page Header-->
-<%= render "shared/header"%>
+<%= render "shared/header" %>
 <header class="show__header"></header>
 
-<div class='account-page' id='account-page'>
-  <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
-      <h2>Log in</h2>
-      <h5>登録しているユーザーでログイン</h5>
-      <%= render "devise/shared/links"%>
+<div class="form-wrapper">
+  <div class="user-form-title">
+    <div class='user-form-login'>
+      Log in
     </div>
-    <div class='account-page__inner--right user-form'>
-      <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :email%>
-          </div>
-          <div class='field-input'>
-            <%= f.email_field :email, autofocus: true%>
-          </div>
-          <div class='field'>
-            <div class='field-label'>
-              <%= f.label :password%>
-              <i>(英数字6文字以上)</i>
-            </div>
-            <div class='field-input'>
-              <%= f.password_field :password, autocomplete: "off"%>
-            </div>
-          </div>
-          <div class='actions'>
-            <%= f.submit "Log in", class: 'btn'%>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
+      <div class="user-form-item">
+        <%= f.email_field :email, required: true, placeholder: "Email Address" %>
+      </div>
+      <div class="user-form-item">
+        <%= f.password_field :password, required: true, placeholder: "Password" %>
+      </div>
+      <div class="user-button-panel">
+        <%= f.submit "Log In", class: "user-button", title: "Sign In" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="user-form-footer">
+    <%= render "devise/shared/links" %>
   </div>
 </div>
-<!-- Footer-->
+
 <%= render "shared/footer"%>
