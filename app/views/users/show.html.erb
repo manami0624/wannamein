@@ -3,50 +3,12 @@
 <header class="show__header"></header>
 
 <!-- Main Content-->
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
+<div class="container px-4 px-lg-5">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7">
 
-<div class="post-preview">
-  <div class="post.html">
-  <h2 class="post-title"><%= "#{current_user.name}さんのDialog" %></h2>
-  </div>
+  <h2 class="post-title"><%= "인녕하세요! #{current_user.name}님" %></h2>
 
-<!-- dialog 詳細ページ -->
-<% @dialogs.each do |dialog| %>
-<div class="dialog__wrapper">
-  <div class="dialog__manage">
-    <% if user_signed_in? %>
-      <%= link_to '編集する', edit_dialog_path(dialog.id), method: :get, class: :dialog__btn %>
-      <%= link_to '削除する', dialog_path(dialog.id), method: :delete, class: :dialog__btn %>
-    <% end %>
-  </div>
-
-  <p class="dialog__hedding"><%= dialog.language %></p>
-  
-  <div class="translation">
-    <%= dialog.translation %>
-  </div>
-
-  <div class="dialog__image">
-    <audio src="<%= dialog.file.url %>" controls></audio>
-  </div>
-
-  <div class="dialog__detail">
-    <%= h(dialog.memo).gsub(/\n|\r|\r\n/, "<br>").html_safe %>
-  </div>
-
-  <div class="dialog__category">
-    <%= link_to dialogs_path(category_id: dialog.category.id) do %>
-    <%= "#{dialog.category.name}の会話をもっとみる" %>
-    <% end %>
-  </div>
-  
-  <div class="dialog__manage">
-    <%= link_to '戻る', root_path, method: :get, class: :dialog__btn %>
-  </div>
-</div>
-<%end%>
 
 <!-- Footer-->
 <%= render "shared/footer"%>

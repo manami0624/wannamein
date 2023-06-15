@@ -185,6 +185,14 @@ select {
   margin-bottom: 50px;
 }
 
+.dialog_cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 161px);
+}
+
 .dialog__wrapper{
   min-height: calc(100vh - 161px);
 }
