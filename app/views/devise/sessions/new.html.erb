@@ -1,13 +1,13 @@
-<%= render "shared/header" %>
-<header class="show__header"></header>
-
 <div class="form-wrapper">
+  <div class="logo">
+    <a href="<%= root_path %>">
+    <img src="<%= asset_path('logo.png') %>" alt="Logo">
+    </a>
+  </div>
   <div class="user-form-title">
-    <div class='user-form-login'>
-      Log in
-    </div>
     <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
       <div class="user-form-item">
+        <%= f.label :email, "登録しているユーザーでログイン" %>
         <%= f.email_field :email, required: true, placeholder: "Email Address" %>
       </div>
       <div class="user-form-item">
@@ -23,4 +23,3 @@
   </div>
 </div>
 
-<%= render "shared/footer"%>

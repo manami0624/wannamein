@@ -8,6 +8,15 @@
   max-width: 370px;
 }
 
+.logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo img {
+  width: 200px;
+}
+
 .user-form-title {
   text-align: center;
   padding: 1em 0;
