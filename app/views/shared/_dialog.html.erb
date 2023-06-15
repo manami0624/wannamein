@@ -1,6 +1,6 @@
 <div class="dialog__wrapper">
   <div class="dialog__manage">
-    <% if user_signed_in? %>
+    <% if user_signed_in? && current_user.id == @dialog.user_id %>
       <%= link_to '編集する', edit_dialog_path(@dialog.id), method: :get, class: :dialog__btn %>
       <%= link_to '削除する', dialog_path(@dialog.id), method: :delete, class: :dialog__btn %>
     <% end %>
