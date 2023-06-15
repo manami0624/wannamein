@@ -9,7 +9,7 @@
              <ul class="navbar-nav ms-auto py-4 py-lg-0">
 								<%# <li class="nav-item"><%= link_to "検索", new_dialog_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li> 
 						<% if user_signed_in? %>
-                 <li class="nav-item"><%= link_to "#{current_user.name}さん", "#", class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
+                 <li class="nav-item"><%= link_to "#{current_user.name}さん", "/users/#{current_user.id}", class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
 						<% else %>
 								<li class="nav-item"><%= link_to 'ログイン', new_user_session_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
 								<li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li>

@@ -82,7 +82,9 @@
             </div>
             <p class="post-meta">
               Category
-            <a href="#!"><%= link_to dialog.category.name %></a>
+						<%= link_to dialogs_path(category_id: dialog.category.id) do %>
+            <%= dialog.category.name %>
+            <% end %>
             </p>
           </div>
         <!-- Divider-->
