@@ -52,42 +52,38 @@
 						<div class="category__btns">
 						  <%= link_to dialogs_path(category_id: 2), class: 'category__btn' do %>仕事
 							 <% end %>
-              <%= link_to dialogs_path(category_id: 3), class: 'category__btn' do %>日常生活
+              <%= link_to dialogs_path(category_id: 3), class: 'category__btn' do %>日常
               <% end %>
-              <%= link_to dialogs_path(category_id: 4), class: 'category__btn' do %>食事
+              <%= link_to dialogs_path(category_id: 4), class: 'category__btn' do %>旅行
               <% end %>
-              <%= link_to dialogs_path(category_id: 5), class: 'category__btn' do %>メッセージ
-              <% end %>
-              <%= link_to dialogs_path(category_id: 6), class: 'category__btn' do %>電話
-              <% end %>
-              <%= link_to dialogs_path(category_id: 7), class: 'category__btn' do %>病院・薬局
-              <% end %>
-              <%= link_to dialogs_path(category_id: 8), class: 'category__btn' do %>恋愛
-              <% end %>
-              <%= link_to dialogs_path(category_id: 9), class: 'category__btn' do %>名言
+              <%= link_to dialogs_path(category_id: 5), class: 'category__btn' do %>名言
               <% end %>
 						</div>
         </div>
         <!-- Divider-->
 			  <hr class="my-4" />
         <!-- Post preview-->
+				<div class=dialog__posts>
 				<% @dialogs.each do |dialog| %>
           <div class="post-preview">
             <div class="post.html">
-              <h2 class="post-title"><%= link_to dialog.language, dialog_path(dialog.id), method: :get %></h2>
-              <h3 class="post-subtitle"><%= link_to dialog.translation, dialog_path(dialog.id), method: :get %></h3>
+              <h5 class="post-title"><%= link_to dialog.language, dialog_path(dialog.id), method: :get %></h2>
+              <h6 class="post-subtitle"><%= link_to dialog.translation, dialog_path(dialog.id), method: :get %></h3>
               <% if dialog.file.present? %>
-              <%= audio_tag dialog.file_url, :controls => true %>
+							<%= audio_tag dialog.file_url, controls: true, style: "width: 100%; height: 20px; margin-top: 10px;" %>
               <% end %>
             </div>
             <p class="post-meta">
               Category
-            <a href="#!"><%= link_to dialog.category.name %></a>
+						<%= link_to dialogs_path(category_id: dialog.category.id) do %>
+            <%= dialog.category.name %>
+            <% end %>
             </p>
           </div>
         <!-- Divider-->
         <hr class="my-4" />
         <% end %>
+				</div>
 									
         <!-- post btn-->
 								<% if user_signed_in? %>

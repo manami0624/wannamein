@@ -10766,6 +10766,11 @@ header.masthead .post-heading .meta a {
   text-align: center;
 }
 
+.dialog__posts{
+  height: calc(100vh - 0px);
+  overflow: scroll;
+}
+
 .post-preview > a {
   color: #212529;
 }

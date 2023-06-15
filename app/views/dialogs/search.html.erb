@@ -1,41 +1,61 @@
-<!-- Page Header-->
-<%= render "shared/header"%>
-<header class="show__header"></header>
+        <!-- Navigation-->
+				<%= render "shared/header"%>
+        <header class="show__header"></header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
 
-<% @dialogs.each do |dialog| %>
-<div class="dialog__wrapper">
-  <div class="dialog__manage">
-    <% if user_signed_in? %>
-      <%= link_to '編集する', edit_dialog_path(dialog.id), method: :get, class: :dialog__btn %>
-      <%= link_to '削除する', dialog_path(dialog.id), method: :delete, class: :dialog__btn %>
-    <% end %>
-  </div>
-
-  <p class="dialog__hedding"><%= dialog.language %></p>
-  
-  <div class="translation">
-    <%= dialog.translation %>
-  </div>
-
-  <div class="dialog__image">
-    <audio src="<%= dialog.file.url %>" controls></audio>
-  </div>
-
-  <div class="dialog__detail">
-    <%= h(dialog.memo).gsub(/\n|\r|\r\n/, "<br>").html_safe %>
-  </div>
-
-  <div class="dialog__category">
-    <%= link_to dialogs_path(category_id: dialog.category.id) do %>
-    <%= "#{dialog.category.name}の会話をもっとみる" %>
-    <% end %>
-  </div>
-  
-  <div class="dialog__manage">
-    <%= link_to '戻る', root_path, method: :get, class: :dialog__btn %>
-  </div>
-</div>
-<%end%>
-
-<!-- Footer-->
-<%= render "shared/footer"%>
+         <!-- Post preview-->
+        <div class="post-preview">
+          <div class="post.html">
+            <h2 class="post-title">検索結果</h2>
+						<div class="category__btns">
+						</div>
+        </div>
+        <!-- Divider-->
+			  <hr class="my-4" />
+        <!-- Post preview-->
+				<div class=dialog__posts>
+				<% @dialogs.each do |dialog| %>
+          <div class="post-preview">
+            <div class="post.html">
+              <h5 class="post-title"><%= link_to dialog.language, dialog_path(dialog.id), method: :get %></h2>
+              <h6 class="post-subtitle"><%= link_to dialog.translation, dialog_path(dialog.id), method: :get %></h3>
+              <% if dialog.file.present? %>
+							<%= audio_tag dialog.file_url, controls: true, style: "width: 100%; height: 20px; margin-top: 10px;" %>
+              <% end %>
+            </div>
+            <p class="post-meta">
+              Category
+						<%= link_to dialogs_path(category_id: dialog.category.id) do %>
+            <%= dialog.category.name %>
+            <% end %>
+            </p>
+          </div>
+        <!-- Divider-->
+        <hr class="my-4" />
+        <% end %>
+				</div>
+									
+        <!-- post btn-->
+								<% if user_signed_in? %>
+                  <% link_path = new_dialog_path %>
+                <% else %>
+                  <% link_path = new_user_session_path %>
+                <% end %>
+                <%= link_to(link_path, class: 'post-btn') do %>
+                  <span class='post-btn-text'>投稿する</span>
+									<%= image_tag 'pen.png' , size: '185x50' ,class: "post-btn-icon" %>
+                <% end %>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <%= render "shared/footer"%>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
