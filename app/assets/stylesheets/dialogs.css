@@ -180,8 +180,8 @@ select {
 
 /* 詳細ページ */
 .show__header{
-  height: 8vh;
-  background-color: #000000;
+  height: 9vh;
+  background-color: #333;
   margin-bottom: 50px;
 }
 
