@@ -10771,9 +10771,25 @@ header.masthead .post-heading .meta a {
   overflow: scroll;
 }
 
+.dialog-category-posts{
+  padding: 0 40px;
+}
+
+.aaaaaa{
+  margin-bottom: 50px;
+}
+
+.post-category__title{
+  padding-bottom: .5em;
+  border-bottom: 6px solid #888888;
+  margin-bottom: 50px;
+  color: #666666;
+}
+
 .post-preview > a {
   color: #212529;
 }
+
 .post-preview > a:focus, .post-preview > a:hover {
   text-decoration: none;
   color: #0085A1;
@@ -10787,6 +10803,14 @@ header.masthead .post-heading .meta a {
   font-weight: 300;
   margin-bottom: 0.625rem;
 }
+
+.post-html__bottom{
+  font-size: 15px;
+  text-align: right;
+  color: #6c757d;
+}
+
+
 .post-preview > .post-meta {
   font-size: 1.125rem;
   font-style: italic;
