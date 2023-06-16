@@ -46,45 +46,75 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
 
          <!-- Post preview-->
-        <div class="post-preview">
-          <div class="post.html">
-            <h2 class="post-title">カテゴリでさがす</h2>
-						<div class="category__btns">
-						  <%= link_to dialogs_path(category_id: 2), class: 'category__btn' do %>仕事
-							 <% end %>
-              <%= link_to dialogs_path(category_id: 3), class: 'category__btn' do %>日常
-              <% end %>
-              <%= link_to dialogs_path(category_id: 4), class: 'category__btn' do %>旅行
-              <% end %>
-              <%= link_to dialogs_path(category_id: 5), class: 'category__btn' do %>名言
-              <% end %>
-						</div>
-        </div>
-        <!-- Divider-->
-			  <hr class="my-4" />
-        <!-- Post preview-->
-				<div class=dialog__posts>
-				<% @dialogs.each do |dialog| %>
+				<div class= "aaaaaa">
           <div class="post-preview">
             <div class="post.html">
-              <h5 class="post-title"><%= link_to dialog.language, dialog_path(dialog.id), method: :get %></h2>
-              <h6 class="post-subtitle"><%= link_to dialog.translation, dialog_path(dialog.id), method: :get %></h3>
-              <% if dialog.file.present? %>
-							<%= audio_tag dialog.file_url, controls: true, style: "width: 100%; height: 20px; margin-top: 10px;" %>
-              <% end %>
-            </div>
-            <p class="post-meta">
-              Category
-						<%= link_to dialogs_path(category_id: dialog.category.id) do %>
-            <%= dialog.category.name %>
-            <% end %>
-            </p>
+              <h2 class="post-title">カテゴリでさがす</h2>
+				  		<div class="category__btns">
+					  	  <%= link_to dialogs_path(category_id: 2), class: 'category__btn' do %>仕事
+					  	  	<% end %>
+                  <%= link_to dialogs_path(category_id: 3), class: 'category__btn' do %>日常
+                  <% end %>
+                  <%= link_to dialogs_path(category_id: 4), class: 'category__btn' do %>旅行
+                  <% end %>
+                  <%= link_to dialogs_path(category_id: 5), class: 'category__btn' do %>名言
+                  <% end %>
+						  </div>
+						</div>
           </div>
-        <!-- Divider-->
-        <hr class="my-4" />
-        <% end %>
 				</div>
-									
+
+
+				<!-- 仕事preview-->
+        <div class="post-preview">
+          <div class="post.html">
+					<div class="post-category__title">
+					  <h2 class="post-title">仕事</h2>
+					</div>
+        </div>
+        <!-- カテゴリーの投稿を表示 -->
+				<div class= dialog-category-posts>
+          <% @work_dialogs.each do |dialog| %>
+          <%= render partial: "shared/category", locals: { dialog: dialog } %>
+          <% end %>
+				</div> 
+
+				<!-- 日常preview-->
+        <div class="post-preview">
+          <div class="post.html">
+					<div class="post-category__title">
+					  <h2 class="post-title">日常</h2>
+					</div>
+        </div>
+        <!-- カテゴリーの投稿を表示 -->
+          <% @daily_dialogs.each do |dialog| %>
+          <%= render partial: "shared/category", locals: { dialog: dialog } %>
+          <% end %>
+
+				<!-- Post preview-->
+        <div class="post-preview">
+          <div class="post.html">
+					<div class="post-category__title">
+					  <h2 class="post-title">旅行</h2>
+					</div>
+        </div>
+        <!-- カテゴリーの投稿を表示 -->
+          <% @travel_dialogs.each do |dialog| %>
+          <%= render partial: "shared/category", locals: { dialog: dialog } %>
+          <% end %>
+
+				<!-- Post preview-->
+        <div class="post-preview">
+          <div class="post.html">
+					<div class="post-category__title">
+					  <h2 class="post-title">名言</h2>
+					</div>
+        </div>
+       <!-- カテゴリーの投稿を表示 -->
+          <% @quote_dialogs.each do |dialog| %>
+          <%= render partial: "shared/category", locals: { dialog: dialog } %>
+          <% end %>
+
         <!-- post btn-->
 								<% if user_signed_in? %>
                   <% link_path = new_dialog_path %>

@@ -9,6 +9,11 @@ class DialogsController < ApplicationController
     else
       @dialogs = Dialog.all
     end
+
+    @work_dialogs = Dialog.where(category_id: 2)  # 仕事カテゴリの投稿を取得
+    @daily_dialogs = Dialog.where(category_id: 3)  # 日常カテゴリの投稿を取得
+    @travel_dialogs = Dialog.where(category_id: 4)  # 旅行カテゴリの投稿を取得
+    @quote_dialogs = Dialog.where(category_id: 5)  # 名言カテゴリの投稿を取得    
   end
 
   def new

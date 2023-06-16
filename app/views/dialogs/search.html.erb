@@ -17,25 +17,9 @@
 			  <hr class="my-4" />
         <!-- Post preview-->
 				<div class=dialog__posts>
-				<% @dialogs.each do |dialog| %>
-          <div class="post-preview">
-            <div class="post.html">
-              <h5 class="post-title"><%= link_to dialog.language, dialog_path(dialog.id), method: :get %></h2>
-              <h6 class="post-subtitle"><%= link_to dialog.translation, dialog_path(dialog.id), method: :get %></h3>
-              <% if dialog.file.present? %>
-							<%= audio_tag dialog.file_url, controls: true, style: "width: 100%; height: 20px; margin-top: 10px;" %>
-              <% end %>
-            </div>
-            <p class="post-meta">
-              Category
-						<%= link_to dialogs_path(category_id: dialog.category.id) do %>
-            <%= dialog.category.name %>
-            <% end %>
-            </p>
-          </div>
-        <!-- Divider-->
-        <hr class="my-4" />
-        <% end %>
+   				<% @dialogs.each do |dialog| %>
+          <%= render partial: "shared/category", locals: { dialog: dialog } %>
+          <% end %>
 				</div>
 									
         <!-- post btn-->
