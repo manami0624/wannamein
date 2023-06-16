@@ -47,31 +47,16 @@
 
          <!-- Post preview-->
 				<div class= "aaaaaa">
-          <div class="post-preview">
-            <div class="post.html">
-              <h2 class="post-title">カテゴリでさがす</h2>
-				  		<div class="category__btns">
-					  	  <%= link_to dialogs_path(category_id: 2), class: 'category__btn' do %>仕事
-					  	  	<% end %>
-                  <%= link_to dialogs_path(category_id: 3), class: 'category__btn' do %>日常
-                  <% end %>
-                  <%= link_to dialogs_path(category_id: 4), class: 'category__btn' do %>旅行
-                  <% end %>
-                  <%= link_to dialogs_path(category_id: 5), class: 'category__btn' do %>名言
-                  <% end %>
-						  </div>
-						</div>
-          </div>
 				</div>
 
 
 				<!-- 仕事preview-->
         <div class="post-preview">
           <div class="post.html">
-					<div class="post-category__title">
-					  <h2 class="post-title">仕事</h2>
-					</div>
-        </div>
+					  <div class="post-category__title">
+					    <h2 class="post-title">仕事</h2>
+					  </div>
+          </div>
         <!-- カテゴリーの投稿を表示 -->
 				<div class= dialog-category-posts>
           <% @work_dialogs.each do |dialog| %>
@@ -87,9 +72,11 @@
 					</div>
         </div>
         <!-- カテゴリーの投稿を表示 -->
+				<div class= dialog-category-posts>
           <% @daily_dialogs.each do |dialog| %>
           <%= render partial: "shared/category", locals: { dialog: dialog } %>
           <% end %>
+				</div>
 
 				<!-- Post preview-->
         <div class="post-preview">
@@ -99,9 +86,11 @@
 					</div>
         </div>
         <!-- カテゴリーの投稿を表示 -->
+				<div class= dialog-category-posts>
           <% @travel_dialogs.each do |dialog| %>
           <%= render partial: "shared/category", locals: { dialog: dialog } %>
           <% end %>
+				</div>
 
 				<!-- Post preview-->
         <div class="post-preview">
@@ -111,11 +100,13 @@
 					</div>
         </div>
        <!-- カテゴリーの投稿を表示 -->
+				<div class= dialog-category-posts>
           <% @quote_dialogs.each do |dialog| %>
           <%= render partial: "shared/category", locals: { dialog: dialog } %>
           <% end %>
+				</div>
 
-        <!-- post btn-->
+        <!-- 固定の投稿するボタン btn-->
 								<% if user_signed_in? %>
                   <% link_path = new_dialog_path %>
                 <% else %>

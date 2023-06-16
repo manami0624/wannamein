@@ -10772,7 +10772,7 @@ header.masthead .post-heading .meta a {
 }
 
 .dialog-category-posts{
-  overflow: scroll;
+  padding: 0 40px;
 }
 
 .aaaaaa{
@@ -10786,12 +10786,10 @@ header.masthead .post-heading .meta a {
   color: #666666;
 }
 
-.post-category__title::after 
-
-
 .post-preview > a {
   color: #212529;
 }
+
 .post-preview > a:focus, .post-preview > a:hover {
   text-decoration: none;
   color: #0085A1;
