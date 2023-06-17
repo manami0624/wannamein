@@ -10798,13 +10798,13 @@ header.masthead .post-heading .meta a {
   width: 100%;
   padding: 10px 20px;
   font-size: 16px;
-  color: #555555;
+  color: #fff;
   text-decoration: none;
-  background-color: #fff;
+  background-color: #777777;
   border: solid #777777;
   border-radius: 3px;
   transition: background-color 0.3s ease;
-  margin-bottom: 50px;
+  margin-bottom: 200px;
 }
 
 
