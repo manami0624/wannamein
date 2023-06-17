@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+	      <script src="index.js"></script>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -25,9 +26,46 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
              <div class="col-md-10 col-lg-8 col-xl-7">
 						<div class="post-heading">
-             <%# <div class="site-heading"> %>
+
+        <h1>
+						<% current_hour = Time.now.hour %>
+          <% if user_signed_in? %>
+            <% if (4..9).include?(current_hour) %>
+              <%= "좋은 아침입니다, #{current_user.name}님!"%><br> 
+							잘 주무셨나요?							
+							<span class="subheading">
+						    <h5><%= "おはようございます, #{current_user.name}さん!よくお休みになられましたか？"%></h5>
+							</span>
+            <% elsif (9..11).include?(current_hour) %>
+              <%= "좋은 아침입니다, #{current_user.name}님!"%><br>
+							좋은 하루 보내세요!
+							<span class="subheading">
+						    <h5><%= "おはようございます, #{current_user.name}さん!良い1日を!"%></h5>
+							</span>
+            <% elsif (12..17).include?(current_hour) %>
+              <%= "안녕하세요, #{current_user.name}님!"%><br>
+							 식사하셨나요?
+							<span class="subheading">
+						    <h5><%= "こんにちは, #{current_user.name}さん!お食事されましたか？"%></h5>
+							</span>
+            <% elsif (18..21).include?(current_hour) %>
+              <%= "안녕하세요, #{current_user.name}님!"%><br>
+							 오늘도 고생 믾으셨습니다.
+							<span class="subheading">
+						    <h5><%= "こんばんは, #{current_user.name}さん!今日もお疲れさまでした"%></h5>
+							</span>
+            <% else %>
+              <%= "#{current_user.name}님!" %><br>
+							 늦은 시간까지 고생 믾으셨습니다.
+							<span class="subheading">
+						    <h5><%= "#{current_user.name}さん!遅い時間まで本当にお疲れさまでした"%></h5>
+							</span>
+            <% end %>
+        <h1>
+       	  <%else%>
                <h1>Wanna Me In?</h1>
 							 <span class="subheading"><h5>원어민（Native Speaker）のように話したい</h5></span>
+					<%end%>
 							 <h2 class="subheading">
 							   <%= form_with(url: search_dialogs_path, local: true, method: :get, class: "search-form") do |form| %>
                  <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
@@ -45,66 +83,133 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
 
-         <!-- Post preview-->
-				<div class= "aaaaaa">
-				</div>
+  <!-- Post preview-->
+	<div class= "aaaaaa">
+    <div class="post-preview">
+      <h1 class="post-title">
+			</h1>
+				<% if user_signed_in? %>
+      <p class="post-meta">
+        <h1>오늘로
+			  <%= (Date.today - current_user.created_at.to_date).to_i %>
+        일째입니다</h1>
+				<h6 class="dialog__category">今日で<%= (Date.today - current_user.created_at.to_date).to_i %>日目になりますね</h6>
+      </p>
+				<% else %>
+        <h3 class="post-subtitle"></h3>
+      <p class="post-meta">
+        <h1><%= link_to '계정을 만드시겠어요?', new_user_registration_path %></h1>
+				<h6><%= link_to 'ようこそ！アカウントを作りますか？', new_user_registration_path, class: :dialog__category %></h6>
+      </p>
+			<% end %>
+
+    </div>
+	</div>
 
 
-				<!-- 仕事preview-->
-        <div class="post-preview">
-          <div class="post.html">
-					  <div class="post-category__title">
-					    <h2 class="post-title">仕事</h2>
-					  </div>
-          </div>
-        <!-- カテゴリーの投稿を表示 -->
-				<div class= dialog-category-posts>
-          <% @work_dialogs.each do |dialog| %>
-          <%= render partial: "shared/category", locals: { dialog: dialog } %>
-          <% end %>
-				</div> 
+<!-- 仕事preview-->
+<div class="work-preview">
+  <div class="post.html">
+	 <div class= aaaaaa>
+    <div class="post-category__title">
+      <h2 class="post-title">仕事</h2>
+    </div>
+	 </div>
+  </div>
+  <!-- カテゴリーの投稿を表示 -->
+    <div class="dialog-category-posts">
+      <% @work_dialogs.first(3).each do |dialog| %>
+      <%= render partial: "shared/category", locals: { dialog: dialog } %>
+      <% end %>
+    </div>
+  <!-- もっと見るボタン -->
+      <% if @work_dialogs.size > 3 %>
+        <button class="show-more-btn" data-category="work">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          </svg>
+				</button>
+      <% end %>
+   </div>
 
-				<!-- 日常preview-->
-        <div class="post-preview">
-          <div class="post.html">
-					<div class="post-category__title">
-					  <h2 class="post-title">日常</h2>
-					</div>
-        </div>
-        <!-- カテゴリーの投稿を表示 -->
-				<div class= dialog-category-posts>
-          <% @daily_dialogs.each do |dialog| %>
-          <%= render partial: "shared/category", locals: { dialog: dialog } %>
-          <% end %>
-				</div>
+<!-- 日常のpreview-->
+<div class="work-preview">
+  <div class="post.html">
+	 <div class= aaaaaa>
+    <div class="post-category__title">
+      <h2 class="post-title">日常</h2>
+    </div>
+	 </div>
+  </div>
+   <!-- カテゴリーの投稿を表示 -->
+    <div class="dialog-category-posts">
+      <% @daily_dialogs.first(3).each do |dialog| %>
+      <%= render partial: "shared/category", locals: { dialog: dialog } %>
+      <% end %>
+    </div>
+  <!-- もっと見るボタン -->
+      <% if @work_dialogs.size > 3 %>
+        <button class="show-more-btn" data-category="work">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          </svg>
+				</button>
+      <% end %>
+    </div>
 
-				<!-- Post preview-->
-        <div class="post-preview">
-          <div class="post.html">
-					<div class="post-category__title">
-					  <h2 class="post-title">旅行</h2>
-					</div>
-        </div>
-        <!-- カテゴリーの投稿を表示 -->
-				<div class= dialog-category-posts>
-          <% @travel_dialogs.each do |dialog| %>
-          <%= render partial: "shared/category", locals: { dialog: dialog } %>
-          <% end %>
-				</div>
+<!-- 旅行のpreview-->
+<div class="work-preview">
+  <div class="post.html">
+	 <div class= aaaaaa>
+    <div class="post-category__title">
+      <h2 class="post-title">旅行</h2>
+    </div>
+	 </div>
+  </div>
+  <!-- カテゴリーの投稿を表示 -->
+    <div class="dialog-category-posts">
+      <% @travel_dialogs.first(3).each do |dialog| %>
+      <%= render partial: "shared/category", locals: { dialog: dialog } %>
+      <% end %>
+    </div>
+  <!-- もっと見るボタン -->
+      <% if @work_dialogs.size > 3 %>
+        <button class="show-more-btn" data-category="work">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          </svg>
+				</button>
+      <% end %>
+    </div>
 
-				<!-- Post preview-->
-        <div class="post-preview">
-          <div class="post.html">
-					<div class="post-category__title">
-					  <h2 class="post-title">名言</h2>
-					</div>
-        </div>
-       <!-- カテゴリーの投稿を表示 -->
-				<div class= dialog-category-posts>
-          <% @quote_dialogs.each do |dialog| %>
-          <%= render partial: "shared/category", locals: { dialog: dialog } %>
-          <% end %>
-				</div>
+<!-- 名言のpreview-->
+<div class="work-preview">
+  <div class="post.html">
+	 <div class= aaaaaa>
+    <div class="post-category__title">
+      <h2 class="post-title">名言</h2>
+    </div>
+	 </div>
+  </div>
+  <!-- カテゴリーの投稿を表示 -->
+    <div class="dialog-category-posts">
+      <% @quote_dialogs.first(3).each do |dialog| %>
+      <%= render partial: "shared/category", locals: { dialog: dialog } %>
+      <% end %>
+    </div>
+  <!-- もっと見るボタン -->
+      <% if @work_dialogs.size > 3 %>
+        <button class="show-more-btn" data-category="work">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          </svg>
+				</button>
+      <% end %>
+    </div>
 
         <!-- 固定の投稿するボタン btn-->
 								<% if user_signed_in? %>
