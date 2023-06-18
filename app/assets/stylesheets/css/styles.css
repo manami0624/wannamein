@@ -10792,9 +10792,21 @@ header.masthead .post-heading .meta a {
   align-items: center;
 }
 
-
-
-.show-more-btn{
+.list-item{
+  opacity: 1;
+}
+.list-item.is-hidden {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+}
+.show-more-btn {
+  margin-top: 20px;
+}
+.show-more-btn.is-btn-hidden{
+display:none;
+}
+.show-more-btn button {
   width: 100%;
   padding: 10px 20px;
   font-size: 16px;
@@ -10804,9 +10816,21 @@ header.masthead .post-heading .meta a {
   border: solid #777777;
   border-radius: 3px;
   transition: background-color 0.3s ease;
-  margin-bottom: 200px;
+  margin-bottom: 5px;
 }
 
+.close-btn{
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  background-color: #333333;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 200px;
+}
 
 .post-preview > a {
   color: #212529;

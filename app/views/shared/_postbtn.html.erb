@@ -1,0 +1,10 @@
+<!-- 固定の投稿するボタン btn-->
+	<% if user_signed_in? %>
+    <% link_path = new_dialog_path %>
+  <% else %>
+    <% link_path = new_user_session_path %>
+  <% end %>
+  <%= link_to(link_path, class: 'post-btn') do %>
+    <span class='post-btn-text'>投稿する</span>
+		<%= image_tag 'pen.png' , size: '185x50' ,class: "post-btn-icon" %>
+  <% end %>
