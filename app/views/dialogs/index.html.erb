@@ -99,7 +99,7 @@
           <h1>오늘로
 	    		  <%= (Date.today - current_user.created_at.to_date).to_i %>
               일째입니다</h1>
-				      <h6 class="dialog__category">今日で<%= (Date.today - current_user.created_at.to_date).to_i %>日目になりますね</h6>
+				      <h6 class="dialog__category">今日で<%= (Date.today - current_user.created_at.to_date).to_i %>日目です</h6>
          <% end %>
       </p>
 				<% else %>
@@ -115,12 +115,11 @@
 
 
 <!-- 仕事preview-->
-<div class="work-preview">
   <div class="post.html">
 	  <div class= aaaaaa>
       <div class="post-category__title">
         <h2 class="post-title">
-	      <%= link_to '職場の会話', work_dialogs_path %>
+	      <%= link_to '仕事の会話', work_dialogs_path(category_id: 2) %>
 			  </h2>
       </div>
 	  </div>
@@ -128,7 +127,7 @@
   <!-- カテゴリーの投稿を表示 -->
   <div class="dialog-category-posts">
 	  <ul class="list">
-      <% @work_dialogs.each do |dialog| %>
+      <% @work_dialogs.first(3).each do |dialog| %>
       <li class="list-item">
         <%= render partial: "shared/category", locals: { dialog: dialog } %>
       </li>
@@ -143,7 +142,6 @@
 
 
 <!-- 日常のpreview-->
-<div class="work-preview">
   <div class="post.html">
 	 <div class= aaaaaa>
     <div class="post-category__title">
@@ -160,15 +158,13 @@
       <% end %>
     </div>
   <!-- もっと見るボタン -->
-      <% if @work_dialogs.size > 3 %>
-        <button class="show-more-btn" data-category="work">
-          もっと見る
-				</button>
-      <% end %>
+    <div class="show-more-btn">
+	  	<button>もっと見る</button>
+		  <div class="close-btn">閉じる
+	    </div>
     </div>
 
 <!-- 旅行のpreview-->
-<div class="work-preview">
   <div class="post.html">
 	 <div class= aaaaaa>
     <div class="post-category__title">
@@ -185,15 +181,13 @@
       <% end %>
     </div>
   <!-- もっと見るボタン -->
-      <% if @work_dialogs.size > 3 %>
-        <button class="show-more-btn" data-category="work">
-          もっと見る
-				</button>
-      <% end %>
+    <div class="show-more-btn">
+	  	<button>もっと見る</button>
+		  <div class="close-btn">閉じる
+	    </div>
     </div>
 
 <!-- 名言のpreview-->
-<div class="work-preview">
   <div class="post.html">
 	 <div class= aaaaaa>
     <div class="post-category__title">
@@ -210,11 +204,10 @@
       <% end %>
     </div>
   <!-- もっと見るボタン -->
-      <% if @work_dialogs.size > 3 %>
-        <button class="show-more-btn" data-category="work">
-          もっと見る
-				</button>
-      <% end %>
+    <div class="show-more-btn">
+	  	<button>もっと見る</button>
+		  <div class="close-btn">閉じる
+	    </div>
     </div>
 
   <!-- 固定の投稿するボタン btn-->

@@ -2,12 +2,12 @@
 	<%= render "shared/header"%>
 
   <!-- Page Header-->
-  <header class="masthead" style="background-image: url('<%= asset_path('home-bg.jpg') %>')">
+  <header class="masthead" style="background-image: url('<%= asset_path('work-bg.jpg') %>')">
     <div class="container position-relative px-4 px-lg-5">
       <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-7">
 					<div class="post-heading">
-            <h1>職場の会話：<%= @work_dialogs.size %>件</h1>
+            <h1>仕事の会話：<%= @work_dialogs.size %>件</h1>
 							<%# <span class="subheading"><h5></h5></span> %>
 						<h2 class="subheading">
 							<%= form_with(url: search_dialogs_path, local: true, method: :get, class: "search-form") do |form| %>
