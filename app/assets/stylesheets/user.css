@@ -1,5 +1,20 @@
 
 /* User Form Layout */
+@media (max-width: 767px) {
+  .form-wrapper {
+    max-width: 100%; /* スマートフォンの画面幅に合わせて幅を変更 */
+    padding: 0 10px; /* 必要に応じてパディングを調整 */
+  }
+
+  .logo img {
+    width: 150px; /* スマートフォンの画面幅に合わせてロゴのサイズを調整 */
+  }
+
+  .user-form-item input,
+  .user-button-panel .user-button {
+    width: 100%; /* 入力フィールドとボタンの幅を100%に設定 */
+  }
+}
 
 .form-wrapper {
   background: #fafafa;
