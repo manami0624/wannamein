@@ -35,34 +35,34 @@
               <%= "좋은 아침입니다, #{current_user.name}님!"%><br> 
 							잘 주무셨나요?							
 							<span class="subheading">
-						    <h5><%= "おはようございます, #{current_user.name}さん!よくお休みになられましたか？"%></h5>
+						    <h6><%= "おはようございます, #{current_user.name}さん!よくお休みになられましたか？"%></h6>
 							</span>
             <% elsif (9..11).include?(current_hour) %>
               <%= "좋은 아침입니다, #{current_user.name}님!"%><br>
 							좋은 하루 보내세요!
 							<span class="subheading">
-						    <h5><%= "おはようございます, #{current_user.name}さん!良い1日を!"%></h5>
+						    <h6><%= "おはようございます, #{current_user.name}さん!良い1日を!"%></h6>
 							</span>
             <% elsif (12..17).include?(current_hour) %>
               <%= "안녕하세요, #{current_user.name}님!"%><br>
 							 식사하셨나요?
 							<span class="subheading">
-						    <h5><%= "こんにちは, #{current_user.name}さん!お食事されましたか？"%></h5>
+						    <h6><%= "こんにちは, #{current_user.name}さん!お食事されましたか？"%></h6>
 							</span>
             <% elsif (18..21).include?(current_hour) %>
               <%= "안녕하세요, #{current_user.name}님!"%><br>
 							 오늘도 고생 믾으셨습니다.
 							<span class="subheading">
-						    <h5><%= "こんばんは, #{current_user.name}さん!今日もお疲れさまでした"%></h5>
+						    <h6><%= "こんばんは, #{current_user.name}さん!今日もお疲れさまでした"%></h6>
 							</span>
             <% else %>
               <%= "#{current_user.name}님!" %><br>
 							 늦은 시간까지 고생 믾으셨습니다.
 							<span class="subheading">
-						    <h5><%= "#{current_user.name}さん!遅い時間まで本当にお疲れさまでした"%></h5>
+						    <h6><%= "#{current_user.name}さん!遅い時間まで本当にお疲れさまでした"%></h6>
 							</span>
             <% end %>
-        <h1>
+        <h2>
        	  <%else%>
                <h1>Wanna Me In?</h1>
 							 <span class="subheading"><h6>원어민（Native Speaker）のように話したい</h6></span>
@@ -72,7 +72,7 @@
                  <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
 	              <button class="search-button"><%= image_tag "search.png", class:"search-icon" %></button>
                 <% end %>
-								</h2>
+								</h1>
                 </div>
               </div>
             </div>
@@ -96,9 +96,9 @@
           <h1>반갑습니다!</h1>
 					<h6 class="dialog__category">お会いできて嬉しいです</h6>
         <% else %>
-          <h1>오늘로
+          <h2>오늘로
 	    		  <%= (Date.today - current_user.created_at.to_date).to_i %>
-              일째입니다</h1>
+              일째입니다</h2>
 				      <h6 class="dialog__category">今日で<%= (Date.today - current_user.created_at.to_date).to_i %>日目です</h6>
          <% end %>
       </p>
