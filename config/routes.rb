@@ -13,6 +13,4 @@ Rails.application.routes.draw do
   get '/travel_dialogs', to: 'dialogs#travel', as: 'travel_dialogs'
   get '/quotes_dialogs', to: 'dialogs#quotes', as: 'quotes_dialogs'
   get '/users/:id/dialogs', to: 'users#dialogs', as: 'user_dialogs'
-
-  resources :dialogs
 end
