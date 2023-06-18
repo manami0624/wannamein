@@ -1,12 +1,12 @@
-        <!-- Navigation-->
-				<%= render "shared/header"%>
-        <header class="show__header"></header>
-        <!-- Main Content-->
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
+  <!-- Navigation-->
+		<%= render "shared/header"%>
+      <header class="show__header"></header>
+  <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
 
-         <!-- Post preview-->
+  <!-- Post preview-->
         <div class="post-preview">
           <div class="post.html">
             <h2 class="post-title">検索結果: <%= @dialogs.size %>件</h2>
@@ -22,24 +22,8 @@
           <% end %>
 				</div>
 									
-        <!-- post btn-->
-								<% if user_signed_in? %>
-                  <% link_path = new_dialog_path %>
-                <% else %>
-                  <% link_path = new_user_session_path %>
-                <% end %>
-                <%= link_to(link_path, class: 'post-btn') do %>
-                  <span class='post-btn-text'>投稿する</span>
-									<%= image_tag 'pen.png' , size: '185x50' ,class: "post-btn-icon" %>
-                <% end %>
-                </div>
-            </div>
-        </div>
-        <!-- Footer-->
-        <%= render "shared/footer"%>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
-</html>
+  <!-- post btn-->
+  <%= render "shared/postbtn"%>
+
+  <!-- Footer-->
+  <%= render "shared/footer"%>

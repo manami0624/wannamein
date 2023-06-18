@@ -9,7 +9,6 @@ class DialogsController < ApplicationController
     else
       @dialogs = Dialog.all
     end
-
     @work_dialogs = Dialog.where(category_id: 2)  # 仕事カテゴリの投稿を取得
     @daily_dialogs = Dialog.where(category_id: 3)  # 日常カテゴリの投稿を取得
     @travel_dialogs = Dialog.where(category_id: 4)  # 旅行カテゴリの投稿を取得
@@ -58,6 +57,22 @@ class DialogsController < ApplicationController
   def category
     category_id = params[:category_id]
     @dialogs = Dialog.where(category_id: category_id)
+  end
+
+  def work
+    @work_dialogs = Dialog.where(category_id: 2)
+  end
+
+  def daily
+    @daily_dialogs = Dialog.where(category_id: 3)
+  end
+
+  def travel
+    @travel_dialogs = Dialog.where(category_id: 4)
+  end
+
+  def quotes
+    @quotes_dialogs = Dialog.where(category_id: 5)
   end
 
 

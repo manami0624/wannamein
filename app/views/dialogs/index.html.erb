@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-	      <script src="index.js"></script>
+  <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -15,19 +14,21 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Navigation-->
-				<%= render "shared/header"%>
+        <script src="index.js"></script>
+  </head>
 
-        <!-- Page Header-->
-        <header class="masthead" style="background-image: url('<%= asset_path('home-bg.jpg') %>')">
-          <div class="container position-relative px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-             <div class="col-md-10 col-lg-8 col-xl-7">
+  <body>
+  <!-- Navigation-->
+		<%= render "shared/header"%>
+
+  <!-- Page Header-->
+    <header class="masthead" style="background-image: url('<%= asset_path('home-bg.jpg') %>')">
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
 						<div class="post-heading">
 
-        <h1>
+          <h1>
 						<% current_hour = Time.now.hour %>
           <% if user_signed_in? %>
             <% if (4..9).include?(current_hour) %>
@@ -98,7 +99,7 @@
           <h1>오늘로
 	    		  <%= (Date.today - current_user.created_at.to_date).to_i %>
               일째입니다</h1>
-				      <h6 class="dialog__category">今日で<%= (Date.today - current_user.created_at.to_date).to_i %>日目になりますね</h6>
+				      <h6 class="dialog__category">今日で<%= (Date.today - current_user.created_at.to_date).to_i %>日目です</h6>
          <% end %>
       </p>
 				<% else %>
@@ -114,37 +115,39 @@
 
 
 <!-- 仕事preview-->
-<div class="work-preview">
   <div class="post.html">
-	 <div class= aaaaaa>
-    <div class="post-category__title">
-      <h2 class="post-title">仕事</h2>
-    </div>
-	 </div>
+	  <div class= aaaaaa>
+      <div class="post-category__title">
+        <h2 class="post-title">
+	      <%= link_to '仕事の会話', work_dialogs_path(category_id: 2) %>
+			  </h2>
+      </div>
+	  </div>
   </div>
   <!-- カテゴリーの投稿を表示 -->
-    <div class="dialog-category-posts">
+  <div class="dialog-category-posts">
+	  <ul class="list">
       <% @work_dialogs.first(3).each do |dialog| %>
-      <%= render partial: "shared/category", locals: { dialog: dialog } %>
+      <li class="list-item">
+        <%= render partial: "shared/category", locals: { dialog: dialog } %>
+      </li>
       <% end %>
-    </div>
+    </ul>
   <!-- もっと見るボタン -->
-      <% if @work_dialogs.size > 3 %>
-        <button class="show-more-btn" data-category="work">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-          <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-          </svg>
-				</button>
-      <% end %>
-   </div>
+    <div class="show-more-btn">
+	  	<button>もっと見る</button>
+		  <div class="close-btn">閉じる
+	    </div>
+    </div>
+
 
 <!-- 日常のpreview-->
-<div class="work-preview">
   <div class="post.html">
 	 <div class= aaaaaa>
     <div class="post-category__title">
-      <h2 class="post-title">日常</h2>
+      <h2 class="post-title">
+		    <%= link_to '日常の会話', daily_dialogs_path(category_id: 3) %>
+		  </h2>
     </div>
 	 </div>
   </div>
@@ -155,22 +158,19 @@
       <% end %>
     </div>
   <!-- もっと見るボタン -->
-      <% if @work_dialogs.size > 3 %>
-        <button class="show-more-btn" data-category="work">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-          <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-          </svg>
-				</button>
-      <% end %>
+    <div class="show-more-btn">
+	  	<button>もっと見る</button>
+		  <div class="close-btn">閉じる
+	    </div>
     </div>
 
 <!-- 旅行のpreview-->
-<div class="work-preview">
   <div class="post.html">
 	 <div class= aaaaaa>
     <div class="post-category__title">
-      <h2 class="post-title">旅行</h2>
+      <h2 class="post-title">
+        <%= link_to '旅行の会話', travel_dialogs_path(category_id: 4) %>
+			</h2>
     </div>
 	 </div>
   </div>
@@ -181,22 +181,19 @@
       <% end %>
     </div>
   <!-- もっと見るボタン -->
-      <% if @work_dialogs.size > 3 %>
-        <button class="show-more-btn" data-category="work">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-          <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-          </svg>
-				</button>
-      <% end %>
+    <div class="show-more-btn">
+	  	<button>もっと見る</button>
+		  <div class="close-btn">閉じる
+	    </div>
     </div>
 
 <!-- 名言のpreview-->
-<div class="work-preview">
   <div class="post.html">
 	 <div class= aaaaaa>
     <div class="post-category__title">
-      <h2 class="post-title">名言</h2>
+      <h2 class="post-title">
+		    <%= link_to '名言', quotes_dialogs_path(category_id: 5) %>
+			</h2>
     </div>
 	 </div>
   </div>
@@ -207,34 +204,21 @@
       <% end %>
     </div>
   <!-- もっと見るボタン -->
-      <% if @work_dialogs.size > 3 %>
-        <button class="show-more-btn" data-category="work">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-          <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-          </svg>
-				</button>
-      <% end %>
+    <div class="show-more-btn">
+	  	<button>もっと見る</button>
+		  <div class="close-btn">閉じる
+	    </div>
     </div>
 
-        <!-- 固定の投稿するボタン btn-->
-								<% if user_signed_in? %>
-                  <% link_path = new_dialog_path %>
-                <% else %>
-                  <% link_path = new_user_session_path %>
-                <% end %>
-                <%= link_to(link_path, class: 'post-btn') do %>
-                  <span class='post-btn-text'>投稿する</span>
-									<%= image_tag 'pen.png' , size: '185x50' ,class: "post-btn-icon" %>
-                <% end %>
-                </div>
-            </div>
-        </div>
-        <!-- Footer-->
+  <!-- 固定の投稿するボタン btn-->
+  <%= render "shared/postbtn"%>
+
+	<!-- Footer-->
         <%= render "shared/footer"%>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
+				<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
     </body>
 </html>
