@@ -7,9 +7,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto py-4 py-lg-0">
-          <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">category</a></li>
         <% if user_signed_in? %>
-          <li class="nav-item"></li>
+          <li class="nav-item"><%= link_to '仕事', work_dialogs_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
+          <li class="nav-item"><%= link_to '日常', daily_dialogs_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
+          <li class="nav-item"><%= link_to '旅行', travel_dialogs_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
+          <li class="nav-item"><%= link_to '名言', quotes_dialogs_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
           <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
         <% else %>
           <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
@@ -19,8 +21,3 @@
     </div>
   </div>
 </nav>
-
-
-
-
-

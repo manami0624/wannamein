@@ -10794,6 +10794,8 @@ header.masthead .post-heading .meta a {
 
 .list-item{
   opacity: 1;
+  list-style-type: none;
+
 }
 .list-item.is-hidden {
   opacity: 0;
@@ -10804,7 +10806,7 @@ header.masthead .post-heading .meta a {
   margin-top: 20px;
 }
 .show-more-btn.is-btn-hidden{
-display:none;
+  display:none;
 }
 .show-more-btn button {
   width: 100%;
