@@ -10862,9 +10862,7 @@ header.masthead .post-heading .meta a {
   padding: 25px;
   background-size: cover;
   background-position: center;
-  border-top-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
   position: relative;
 }
 
@@ -10875,8 +10873,6 @@ header.masthead .post-heading .meta a {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.35);
-  border-top-left-radius: 40px;
-  border-bottom-right-radius: 40px;
 }
 
 .category-box::before {
@@ -10886,8 +10882,6 @@ header.masthead .post-heading .meta a {
   left: 0;
   width: 100%;
   height: 100%;
-  border-top-left-radius: 30px;
-  border-bottom-right-radius: 30px;
   margin-bottom: 10px;
   background-color: black;
   opacity: 0.005; /* 透明度を調整 */
@@ -10895,7 +10889,7 @@ header.masthead .post-heading .meta a {
 }
 
 .category-title {
-  color: white;
+  color: #ffffff;
   font-size: 35px;
   position: absolute;
   top: 50%;
