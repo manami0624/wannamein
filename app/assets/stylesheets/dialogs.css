@@ -236,8 +236,8 @@ select {
 }
 .dialog__btn{
   display: block;
-  padding: 0.4em 1.6em;
-  font-size: 0.4em;
+  padding: 0.5em 1.6em;
+  font-size: 0.8em;
   color: #999;
   text-decoration: none;
   user-select: none;
