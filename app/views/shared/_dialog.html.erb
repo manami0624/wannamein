@@ -25,12 +25,10 @@
   </div>
 
   <div class="dialog__category">
-    <%= link_to dialogs_path(category_id: @dialog.category.id) do %>
-    <%= "#{@dialog.category.name}の会話をもっとみる" %>
-    <% end %>
+    <%= "Category: #{@dialog.category.name}" %>
   </div>
   
   <div class="dialog__manage">
-    <%= link_to '戻る', root_path, method: :get, class: :dialog__btn %>
+    <%= link_to 'TOPへ戻る', root_path, method: :get, class: :dialog__btn %>
   </div>
 </div>
