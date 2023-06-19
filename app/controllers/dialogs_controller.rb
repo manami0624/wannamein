@@ -78,7 +78,7 @@ class DialogsController < ApplicationController
 
   private
   def dialog_params
-    params.require(:dialog).permit(:language, :translation, :memo, :category_id, :file).merge(user_id: current_user.id)
+    params.require(:dialog).permit(:language, :translation, :memo, :category_id, :file, :body, tag_ids: []).merge(user_id: current_user.id)
   end
 
   def set_dialog

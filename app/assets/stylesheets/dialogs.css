@@ -179,13 +179,13 @@ select {
 
 
 /* 詳細ページ */
-.show__header{
+.show__header {
   height: 9vh;
   background-color: #333;
   margin-bottom: 50px;
 }
 
-.dialog_cards{
+.dialog_cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -193,48 +193,60 @@ select {
   min-height: calc(100vh - 161px);
 }
 
-.dialog__wrapper{
+.dialog__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-height: calc(100vh - 161px);
 }
-.dialog__hedding{
+
+.dialog__hedding {
   font-size: 40px;
   font-weight: bold;
   text-align: center;
 }
-.translation{
+
+.translation {
   font-size: 20px;
   text-align: center;
 }
 
-.dialog__category{
+.dialog__category {
   display: block;
   font-size: 16px;
   color: #999;
   text-align: center;
   text-decoration: underline;
   text-decoration: none;
+  align-items: center;
 }
-.dialog__image{
+
+.dialog__image {
   width: 40%;
   margin: 0 auto;
   padding: 16px 0;
 }
-.dialog__detail{
+
+.dialog__detail {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-bottom: 8px;
 }
-.detail__title{
+
+.detail__title {
   font-size: 20px;
   font-weight: bold;
 }
-.dialog__manage{
+
+.dialog__manage {
   display: flex;
   justify-content: center;
   padding-top: 16px;
 }
-.dialog__btn{
+
+.dialog__btn {
   display: block;
   padding: 0.5em 1.6em;
   font-size: 0.8em;
@@ -246,7 +258,8 @@ select {
   transition: 0.4s ease;
   margin: 0 4px;
 }
-.dialog__btn:hover{
+
+.dialog__btn:hover {
   color: #fff;
   background: #999;
 }
@@ -259,6 +272,7 @@ audio {
 p {
   margin-bottom: 0;
 }
+
 
 /* 投稿ボタンのスタイル */
 .post-btn {
