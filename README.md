@@ -51,6 +51,7 @@ https://docs.google.com/spreadsheets/d/1WUsmbtqMaBI2t9FCtWMc8jvV3SXFGeniRN97oKcK
 # 実装予定の機能
 ・感情別のタグ付け<br>
 ・音声を直接録音する機能<br>
+・録音した音声と自分の声を同時に再生しながら比較できる機能<br>
 <br>
 
 # データベース設計

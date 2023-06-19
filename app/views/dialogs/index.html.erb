@@ -51,13 +51,13 @@
 							</span>
             <% elsif (18..21).include?(current_hour) %>
               <%= "안녕하세요, #{current_user.name}님!"%><br>
-							 오늘도 고생 믾으셨습니다.
+							 오늘도 수고하셨습니다.
 							<span class="subheading">
 						    <h6><%= "こんばんは, #{current_user.name}さん!今日もお疲れさまでした"%></h6>
 							</span>
             <% else %>
               <%= "#{current_user.name}님!" %><br>
-							 늦은 시간까지 고생 믾으셨습니다.
+							 늦은 시간까지 수고하셨습니다.
 							<span class="subheading">
 						    <h6><%= "#{current_user.name}さん!遅い時間まで本当にお疲れさまでした"%></h6>
 							</span>
