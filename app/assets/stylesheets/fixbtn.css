@@ -1,10 +1,10 @@
 /* 投稿ボタンのスタイル */
 .post-btn {
-  width: 120px;
-  height: 120px; /* ボタンの高さを幅と同じに設定 */
+  width: 100px;
+  height: 100px; /* ボタンの高さを幅と同じに設定 */
   background: #343434;
   text-align: center;
-  border-radius: 30%; /* 50% で真円になります */
+  border-radius: 50%; /* 50% で真円になる */
   bottom: 32px;
   right: 32px;
   position: fixed;
@@ -17,16 +17,9 @@
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* 影の設定 */
 }
 
-.post-btn-text {
-  color: #fff;
-  display: block;
-  font-size: 15px;
-  text-decoration: none;
-  margin-top: 10px; /* イメージとの間に適切なマージンを追加 */
-}
 
 .post-btn-icon {
-  width: 60%;
+  width: 70%;
   height: auto; /* アイコンの高さを自動調整 */
 }
 
@@ -34,8 +27,8 @@
 .jump-btn {
   width: 150px;
   height: 150px; /* ボタンの高さを幅と同じに設定 */
-  bottom: 120px;
-  right: 20px;
+  bottom: 100px;
+  right: 15px;
   position: fixed;
   padding: 15px;
   box-sizing: border-box; /* パディングがボタンのサイズに含まれるようにする */
@@ -43,4 +36,5 @@
   flex-direction: column; /* 子要素を縦方向に配置する */
   align-items: center; /* 横方向に中央に配置 */
   justify-content: center; /* 縦方向に中央に配置 */
+  /* display: none; */
 }
