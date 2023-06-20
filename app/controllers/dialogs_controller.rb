@@ -48,7 +48,11 @@ class DialogsController < ApplicationController
   def destroy
     dialog = Dialog.find(params[:id])
     dialog.destroy
-    redirect_to root_path
+  
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: '投稿を削除しました。' }
+      format.js
+    end
   end
 
   def show
