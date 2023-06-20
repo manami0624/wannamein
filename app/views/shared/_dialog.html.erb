@@ -38,10 +38,11 @@
   </div>
 
 <div class="dialog__manage">
-    <% if user_signed_in? && current_user.id == @dialog.user_id %>
-      <%= link_to '編集する', edit_dialog_path(@dialog.id), method: :get, class: :dialog__btn %>
-      <%= link_to '削除する', dialog_path(@dialog.id), method: :delete, class: :dialog__btn %>
-    <% end %>
-      <%= link_to 'TOPへ戻る', root_path, method: :get, class: :dialog__btn %>
-  </div>
+  <% if user_signed_in? && current_user.id == @dialog.user_id %>
+    <%= link_to '編集する', edit_dialog_path(@dialog.id), method: :get, class: :dialog__btn %>
+    <%= link_to '削除する', dialog_path(@dialog.id), method: :delete, class: :dialog__btn, data: { confirm: '本当に削除しますか？' } %>
+  <% end %>
+  <%= link_to 'TOPへ戻る', root_path, method: :get, class: :dialog__btn %>
+</div>
+
 </div>
