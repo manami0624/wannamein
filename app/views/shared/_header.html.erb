@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto py-4 py-lg-0">
           <li class="nav-item"><%= link_to 'How to Use', root_path(anchor: "usage"), class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
-          <li class="nav-item"><%= link_to 'Category', root_path(anchor: "category"), class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
-          <li class="nav-item"><%= link_to 'Emotion', root_path(anchor: "emotion"), class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
         <% if user_signed_in? %>
           <%# <li class="nav-item"><%= link_to '仕事', work_dialogs_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li> 
           <%# <li class="nav-item"><%= link_to '日常', daily_dialogs_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li> 
           <%# <li class="nav-item"><%= link_to '旅行', travel_dialogs_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li> 
           <%# <li class="nav-item"><%= link_to '名言', quotes_dialogs_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li> 
+          <li class="nav-item"><%= link_to 'Category', root_path(anchor: "category"), class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
+          <li class="nav-item"><%= link_to 'Emotion', root_path(anchor: "emotion"), class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
           <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
         <% else %>
           <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, class: "nav-link px-lg-3 py-3 py-lg-4" %></li>
