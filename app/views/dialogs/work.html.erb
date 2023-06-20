@@ -35,6 +35,8 @@
 
   <!-- 固定の投稿するボタン btn-->
   <%= render "shared/postbtn"%>
-
+  <%= link_to(work_dialogs_path, class: 'jump-btn') do %>
+		<%= image_tag 'airplane.png',class: "post-btn-icon" %>
+  <% end %>
   <!-- Footer-->
   <%= render "shared/footer"%>

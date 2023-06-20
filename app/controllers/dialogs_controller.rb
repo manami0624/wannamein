@@ -12,7 +12,15 @@ class DialogsController < ApplicationController
     @work_dialogs = Dialog.where(category_id: 2)  # 仕事カテゴリの投稿を取得
     @daily_dialogs = Dialog.where(category_id: 3)  # 日常カテゴリの投稿を取得
     @travel_dialogs = Dialog.where(category_id: 4)  # 旅行カテゴリの投稿を取得
-    @quote_dialogs = Dialog.where(category_id: 5)  # 名言カテゴリの投稿を取得    
+    @quote_dialogs = Dialog.where(category_id: 5)  # 名言カテゴリの投稿を取得
+
+    if params[:tag_ids]
+      @dialogs = []
+      params[:tag_ids].each do |key, value|      
+        @dialogs += Tag.find_by(name: key).dialogs if value == "1"
+      end
+      @dialogs.uniq!
+    end
   end
 
   def new

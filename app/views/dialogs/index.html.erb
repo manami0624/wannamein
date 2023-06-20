@@ -214,108 +214,22 @@
   <%# <% if user_signed_in? %> 
 	<div class="aaaaaa">
 	<hr class="my-5" />
-      <h1 class="post-title">Emotion</h1>
+      <h1 class="post-title", id="emotion">Emotion</h1>
 			<h6 class="dialog__category">感情から探す</h6>
 	</div>
 
-<div class="aaaaaa">
-<div class="bbbbbb">Positive
-  <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
+<%= form_tag({controller:"dialogs",action:"index"}, method: :get) do %>
+    <% Tag.all.each do |t| %>
+        <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
+    <% end %>
+    <%= submit_tag '検索' %>
+<% end %>
 
-  <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
-
-  <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
-
-  <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
-
-	 <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
 </div>
 
-<div class="bbbbbb">Fine
-  <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
-
-  <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
-
-  <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
-
-  <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
-
-	 <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
-</div>
-
-<div class="bbbbbb">Negative
-  <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
-
-  <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
-
-  <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
-
-  <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
-
-	 <div class= "cccccc">
-	  cccccc
-		<div class="dddddd">dddddd</div>
-			<div class="eeeeee">eeeeee</div>
-  </div>
-</div>
-
-
+  <%= link_to(root_path, class: 'jump-btn') do %>
+		<%= image_tag 'airplane.png',class: "post-btn-icon" %>
+  <% end %>
 
 	</div>
 	</div>
