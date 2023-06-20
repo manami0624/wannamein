@@ -33,10 +33,15 @@
     <% end %>
   </div>
 
-  <!-- 固定の投稿するボタン btn-->
-  <%= render "shared/postbtn"%>
-  <%= link_to(daily_dialogs_path, class: 'jump-btn') do %>
-		<%= image_tag 'airplane.png',class: "post-btn-icon" %>
-  <% end %>
+  <%= link_to(travel_dialogs_path, class: 'jump-btn') do %>
+
+  <!-- 固定のボタン btn-->
+    <div class="jump-btn" id="jump">
+      <%= link_to(daily_dialogs_path, class: 'jump-btn') do %>
+		  <%= image_tag 'airplane.png',class: "post-btn-icon" %>
+      <% end %>
+    </div>
+    <%= render "shared/postbtn"%>
+
   <!-- Footer-->
   <%= render "shared/footer"%>
