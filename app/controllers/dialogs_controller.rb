@@ -30,7 +30,7 @@ class DialogsController < ApplicationController
   def create
     @dialog = Dialog.new(dialog_params)
     if @dialog.save
-      redirect_to root_path
+      redirect_to dialog_path(@dialog.id)
     else
       render :new
     end
@@ -41,19 +41,21 @@ class DialogsController < ApplicationController
 
   def update
     if @dialog.update(dialog_params)
-      redirect_to root_path
+      redirect_to dialog_path(@dialog.id)
     end
   end
 
   def destroy
     dialog = Dialog.find(params[:id])
+    category_id = dialog.category_id  # 削除する投稿のカテゴリーIDを取得
     dialog.destroy
-  
+
     respond_to do |format|
       format.html { redirect_to root_path, notice: '投稿を削除しました。' }
       format.js
     end
   end
+  
 
   def show
   end
