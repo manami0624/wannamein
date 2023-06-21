@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   
   get '/work_dialogs', to: 'dialogs#work', as: 'work_dialogs'
   get '/daily_dialogs', to: 'dialogs#daily', as: 'daily_dialogs'
-  get '/travel_dialogs', to: 'dialogs#travel', as: 'travel_dialogs'
   get '/quotes_dialogs', to: 'dialogs#quotes', as: 'quotes_dialogs'
   get '/users/:id/dialogs', to: 'users#dialogs', as: 'user_dialogs'
 end

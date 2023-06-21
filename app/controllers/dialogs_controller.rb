@@ -11,8 +11,7 @@ class DialogsController < ApplicationController
     end
     @work_dialogs = Dialog.where(category_id: 2)  # 仕事カテゴリの投稿を取得
     @daily_dialogs = Dialog.where(category_id: 3)  # 日常カテゴリの投稿を取得
-    @travel_dialogs = Dialog.where(category_id: 4)  # 旅行カテゴリの投稿を取得
-    @quote_dialogs = Dialog.where(category_id: 5)  # 名言カテゴリの投稿を取得
+    @quote_dialogs = Dialog.where(category_id: 4)  # 名言カテゴリの投稿を取得
 
     if params[:tag_ids]
       @dialogs = []
@@ -81,12 +80,8 @@ class DialogsController < ApplicationController
     @daily_dialogs = Dialog.where(category_id: 3)
   end
 
-  def travel
-    @travel_dialogs = Dialog.where(category_id: 4)
-  end
-
   def quotes
-    @quotes_dialogs = Dialog.where(category_id: 5)
+    @quotes_dialogs = Dialog.where(category_id: 4)
   end
 
 
