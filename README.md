@@ -58,9 +58,6 @@ https://wannamein.onrender.com/ <br>
 投稿機能
 [![投稿機能](https://i.gyazo.com/5d7d1af6cf88366bcb75ffcea5303f7d.gif)](https://gyazo.com/5d7d1af6cf88366bcb75ffcea5303f7d)
 
-ページ内ジャンプ
-[![ページ内ジャンプ](https://i.gyazo.com/38f79f3aca7fb4e9829fc4c1422543f7.gif)](https://gyazo.com/38f79f3aca7fb4e9829fc4c1422543f7)
-
 # 実装予定の機能
 ・感情別のタグ付け<br>
 ・音声を直接録音する機能<br>
