@@ -26,43 +26,38 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-md-10 col-lg-8 col-xl-7">
 						<div class="post-heading">
-              <h1>
+              
 		  			  	<% current_hour = Time.now.hour %>
                 <% if user_signed_in? %>
                   <% if (4..9).include?(current_hour) %>
-                    <%= "좋은 아침입니다, #{current_user.name}님!"%><br> 
-							      잘 주무셨나요?							
+                    <h1><%= "좋은 아침입니다, #{current_user.name}님!"%><br> 잘 주무셨나요?</h1>							
 							      <span class="subheading">
 						          <h6><%= "おはようございます, #{current_user.name}さん!よくお休みになられましたか？"%></h6>
 							      </span>
                   <% elsif (9..11).include?(current_hour) %>
-                    <%= "좋은 아침입니다, #{current_user.name}님!"%><br>
-							      좋은 하루 보내세요!
+                    <h1><%= "좋은 아침입니다, #{current_user.name}님!"%><br>좋은 하루 보내세요!</h1>
 							      <span class="subheading">
 						          <h6><%= "おはようございます, #{current_user.name}さん!良い1日を!"%></h6>
 							      </span>
                   <% elsif (12..17).include?(current_hour) %>
-                    <%= "안녕하세요, #{current_user.name}님!"%><br>
-							      식사하셨나요?
+                    <h1><%= "안녕하세요, #{current_user.name}님!"%><br>식사하셨어요?</h1>
 							      <span class="subheading">
 						          <h6><%= "こんにちは, #{current_user.name}さん!お食事されましたか？"%></h6>
 							      </span>
                   <% elsif (18..21).include?(current_hour) %>
-                    <%= "안녕하세요, #{current_user.name}님!"%><br>
-							      오늘도 수고하셨습니다.
+                    <h1><%= "안녕하세요, #{current_user.name}님!"%><br>오늘도 수고하셨습니다.</h1>
 							      <span class="subheading">
 						          <h6><%= "こんばんは, #{current_user.name}さん!今日もお疲れさまでした"%></h6>
 							      </span>
                   <% else %>
-                    <%= "#{current_user.name}님!" %><br>
-							      늦은 시간까지 수고하셨습니다.
+                    <h2><%= "#{current_user.name}님!" %><br>늦은 시간까지 고생 많으셨습니다.</h2>
 							      <span class="subheading">
 						          <h6><%= "#{current_user.name}さん!遅い時間まで本当にお疲れさまでした"%></h6>
 							      </span>
                   <% end %>
        	        <%else%>
                   <h1>Wanna Me In?</h1>
-							    <span class="subheading"><h6>원어민（Native Speaker）のように話したい</h6></span>
+							    <span class="subheading"><h6>원어민（Native Speaker）のように話そう</h6></span>
 					      <%end%>
 							    <h2 class="subheading">
 							      <%= form_with(url: search_dialogs_path, local: true, method: :get, class: "search-form") do |form| %>
@@ -113,7 +108,7 @@
 		            投稿を確認し、編集機能から<br>
 		            ネイティブが音声を<br>
                 追加します<br>
-		          </div>
+              </div>
             </div>
 
             <div class= "cccccc">
@@ -152,8 +147,7 @@
             </div>
           </div>
 
-            <!-- Divider-->
-	          <hr class="my-4" />
+            <hr class="my-4" /><!-- Divider-->
 
             <% if user_signed_in? %>
 	            <div class="aaaaaa">
