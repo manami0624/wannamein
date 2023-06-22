@@ -96,6 +96,8 @@ https://wannamein.onrender.com/ <br>
 
 [![Image from Gyazo](https://i.gyazo.com/c7c85657c491661b4d85a5fd89e4fd73.jpg)](https://gyazo.com/c7c85657c491661b4d85a5fd89e4fd73)
 
+[![Image from Gyazo](https://i.gyazo.com/961004ab73d64be0c43431f56989eb74.jpg)](https://gyazo.com/961004ab73d64be0c43431f56989eb74)
+
 ## 3. レスポンシブデザイン
 語学系のアプリはスマートフォンやタブレットでみることが多いので、大きさやコンテンツの密度を意識しました。<br>
 <br>

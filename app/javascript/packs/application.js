@@ -9,7 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 //= require audiojs
 require("../index")
-require("../dialog")
+require("../jump")
 //= require_tree .
 
 // Uncomment to copy all static images under ../images to the output folder and reference

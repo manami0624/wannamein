@@ -1,34 +1,18 @@
 console.log("読み込み完了");
 
-function updateJumpButtonVisibility() {
-  const jumpBtn = document.getElementById('jump');
-  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+document.querySelectorAll('.category-title').forEach(function(element) {
 
-  if (scrollTop === 0) {
-    jumpBtn.style.display = 'none';
-  } else {
-    jumpBtn.style.display = 'block';
-  }
-}
+  element.addEventListener('mouseover', function() {
+    const jpText = this.getAttribute('data-jp');
+    const krText = this.getAttribute('data-kr');
+    this.textContent = krText; // 韓国語にテキストを変更
+    this.setAttribute('data-kr', jpText); // 韓国語のデータ属性に日本語のテキストを設定
+  });
 
-window.addEventListener('scroll', updateJumpButtonVisibility);
-
-const jumpBtn = document.getElementById('jump');
-jumpBtn.addEventListener('click', function() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+  element.addEventListener('mouseout', function() {
+    const jpText = this.getAttribute('data-jp');
+    const krText = this.getAttribute('data-kr');
+    this.textContent = jpText; // 日本語にテキストを変更
+    this.setAttribute('data-kr', krText); // 日本語のデータ属性に韓国語のテキストを設定
   });
 });
-
-window.addEventListener('DOMContentLoaded', function() {
-  updateJumpButtonVisibility();
-
-  // 画面が一番上までスクロールされたときにマークを非表示にする
-  window.addEventListener('scroll', function() {
-    if (window.scrollY === 0) {
-      jumpBtn.style.display = 'none';
-    }
-  });
-});
-
