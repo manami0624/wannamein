@@ -30,15 +30,6 @@
   align-items: center;
 }
 
-.nav {
-  font-size: 18px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 1vh 0;
-}
-
 
 /* フォーム周り */
 /* フォーム全体のスタイル */
