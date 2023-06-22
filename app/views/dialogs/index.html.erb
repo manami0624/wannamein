@@ -18,228 +18,216 @@
   </head>
 
   <body>
-  <!-- Navigation-->
+    <!-- Navigation-->
 		<%= render "shared/header"%>
 
-  <!-- Page Header-->
+    <!-- Page Header-->
     <header class="masthead" style="background-image: url('<%= asset_path('home-bg.jpg') %>')">
       <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-md-10 col-lg-8 col-xl-7">
 						<div class="post-heading">
-
-          <h1>
-						<% current_hour = Time.now.hour %>
-          <% if user_signed_in? %>
-            <% if (4..9).include?(current_hour) %>
-              <%= "좋은 아침입니다, #{current_user.name}님!"%><br> 
-							잘 주무셨나요?							
-							<span class="subheading">
-						    <h6><%= "おはようございます, #{current_user.name}さん!よくお休みになられましたか？"%></h6>
-							</span>
-            <% elsif (9..11).include?(current_hour) %>
-              <%= "좋은 아침입니다, #{current_user.name}님!"%><br>
-							좋은 하루 보내세요!
-							<span class="subheading">
-						    <h6><%= "おはようございます, #{current_user.name}さん!良い1日を!"%></h6>
-							</span>
-            <% elsif (12..17).include?(current_hour) %>
-              <%= "안녕하세요, #{current_user.name}님!"%><br>
-							 식사하셨나요?
-							<span class="subheading">
-						    <h6><%= "こんにちは, #{current_user.name}さん!お食事されましたか？"%></h6>
-							</span>
-            <% elsif (18..21).include?(current_hour) %>
-              <%= "안녕하세요, #{current_user.name}님!"%><br>
-							 오늘도 수고하셨습니다.
-							<span class="subheading">
-						    <h6><%= "こんばんは, #{current_user.name}さん!今日もお疲れさまでした"%></h6>
-							</span>
-            <% else %>
-              <%= "#{current_user.name}님!" %><br>
-							 늦은 시간까지 수고하셨습니다.
-							<span class="subheading">
-						    <h6><%= "#{current_user.name}さん!遅い時間まで本当にお疲れさまでした"%></h6>
-							</span>
-            <% end %>
-        <h1>
-       	  <%else%>
-               <h1>Wanna Me In?</h1>
-							 <span class="subheading"><h6>원어민（Native Speaker）のように話したい</h6></span>
-					<%end%>
-							 <h2 class="subheading">
-							   <%= form_with(url: search_dialogs_path, local: true, method: :get, class: "search-form") do |form| %>
-                 <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
-	              <button class="search-button"><%= image_tag "search.png", class:"search-icon" %></button>
-                <% end %>
-								</h1>
-                </div>
-              </div>
+              <h1>
+		  			  	<% current_hour = Time.now.hour %>
+                <% if user_signed_in? %>
+                  <% if (4..9).include?(current_hour) %>
+                    <%= "좋은 아침입니다, #{current_user.name}님!"%><br> 
+							      잘 주무셨나요?							
+							      <span class="subheading">
+						          <h6><%= "おはようございます, #{current_user.name}さん!よくお休みになられましたか？"%></h6>
+							      </span>
+                  <% elsif (9..11).include?(current_hour) %>
+                    <%= "좋은 아침입니다, #{current_user.name}님!"%><br>
+							      좋은 하루 보내세요!
+							      <span class="subheading">
+						          <h6><%= "おはようございます, #{current_user.name}さん!良い1日を!"%></h6>
+							      </span>
+                  <% elsif (12..17).include?(current_hour) %>
+                    <%= "안녕하세요, #{current_user.name}님!"%><br>
+							      식사하셨나요?
+							      <span class="subheading">
+						          <h6><%= "こんにちは, #{current_user.name}さん!お食事されましたか？"%></h6>
+							      </span>
+                  <% elsif (18..21).include?(current_hour) %>
+                    <%= "안녕하세요, #{current_user.name}님!"%><br>
+							      오늘도 수고하셨습니다.
+							      <span class="subheading">
+						          <h6><%= "こんばんは, #{current_user.name}さん!今日もお疲れさまでした"%></h6>
+							      </span>
+                  <% else %>
+                    <%= "#{current_user.name}님!" %><br>
+							      늦은 시간까지 수고하셨습니다.
+							      <span class="subheading">
+						          <h6><%= "#{current_user.name}さん!遅い時間まで本当にお疲れさまでした"%></h6>
+							      </span>
+                  <% end %>
+       	        <%else%>
+                  <h1>Wanna Me In?</h1>
+							    <span class="subheading"><h6>원어민（Native Speaker）のように話したい</h6></span>
+					      <%end%>
+							    <h2 class="subheading">
+							      <%= form_with(url: search_dialogs_path, local: true, method: :get, class: "search-form") do |form| %>
+                    <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
+	                <button class="search-button">
+								    <%= image_tag "search.png", class:"search-icon" %>
+								  </button>
+                  <% end %>
+							</h1>
             </div>
           </div>
-        </header>
+        </div>
+      </div>
+    </header>
 
-        <!-- Main Content-->
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <div class= "aaaaaa">
+            <div class="post-preview">
+              <h1 class="post-title", id="usage">'원어민' 사용법</h1>
+			        <h6 class="dialog__category">アプリの使い方</h6>
+            </div>
+	        </div>
+          <div class="bbbbbb">
+            <div class= "cccccc">
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+              </svg>
+		          <div class="dddddd">投稿する
+						  </div>
+			        <div class="eeeeee">
+			          接客や業務時間中に使う<br>
+			          フレーズを投稿します<br>
+		          </div>
+            </div>
 
-  <div class= "aaaaaa">
-    <div class="post-preview">
-      <h1 class="post-title", id="usage">'원어민' 사용법</h1>
-			<h6 class="dialog__category">アプリの使い方</h6>
-    </div>
-	</div>
-    
+	          <div class= "cccccc">
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+              <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+              <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
+              </svg>
+		          <div class="dddddd">音声追加
+						  </div>
+		          <div class="eeeeee">
+		            投稿を確認し、編集機能から<br>
+		            ネイティブが音声を<br>
+                追加します<br>
+		          </div>
+            </div>
 
-<div class="bbbbbb">
-  <div class= "cccccc">
-    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-    </svg>
-		<div class="dddddd">投稿する</div>
-			<div class="eeeeee">
-			接客や業務時間中に使う<br>
-			フレーズを投稿します<br>
-		</div>
-  </div>
+            <div class= "cccccc">
+              <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="width: 80px; height: 80px; opacity: 1;" xml:space="preserve">
+              <style type="text/css">
+          	  .st0{fill:#4B4B4B;}
+              </style>
+              <g>
+	            <path class="st0" d="M502.82,60.707c-8.747-18.246-23.112-33.379-40.878-43.99C444.158,6.116,422.918,0.018,400.114,0
+		          c-30.364,0.018-58.026,10.846-78.361,28.784c-10.163,8.974-18.508,19.756-24.32,31.923c-5.825,12.148-9.096,25.69-9.096,39.875
+		          c-0.009,18.074,5.333,35.08,14.478,49.563c7.811,12.384,18.377,22.977,30.838,31.263l-18.766,46.876l13.551-1.673
+		          c46.817-5.854,91.631-23.376,112.916-32.575c20.222-7.218,37.676-19.558,50.241-35.586c12.647-16.138,20.332-36.194,20.318-57.867
+		          C511.926,86.397,508.638,72.856,502.82,60.707z M479.844,146.969c-10.521,13.452-25.695,24.325-43.66,30.638l-0.245,0.072
+		          l-0.244,0.109c-18.418,7.996-55.674,22.515-95.277,29.408l13.424-33.489l-6.59-3.772c-13.297-7.599-24.184-17.947-31.679-29.824
+		          c-7.504-11.914-11.62-25.284-11.633-39.531c0-11.19,2.546-21.819,7.25-31.661c7.042-14.736,19.051-27.626,34.464-36.826
+		          c15.419-9.199,34.19-14.663,54.458-14.654c27.065-0.009,51.394,9.715,68.703,25.012c8.648,7.644,15.541,16.645,20.236,26.468
+		          c4.699,9.842,7.246,20.471,7.255,31.661C496.298,117.624,490.383,133.491,479.844,146.969z" style="fill: rgb(4, 4, 4);"></path>
+	            <path class="st0" d="M356.032,89.483c-6.704,0-12.135,6.078-12.135,13.55c0,7.49,5.432,13.56,12.135,13.56
+		          c6.703,0,12.144-6.07,12.144-13.56C368.176,95.561,362.735,89.483,356.032,89.483z" style="fill: rgb(4, 4, 4);"></path>
+	            <path class="st0" d="M402.858,89.483c-6.707,0-12.148,6.078-12.148,13.55c0,7.49,5.441,13.56,12.148,13.56
+		          c6.704,0,12.14-6.07,12.14-13.56C414.998,95.561,409.562,89.483,402.858,89.483z" style="fill: rgb(4, 4, 4);"></path>
+	            <path class="st0" d="M449.672,89.483c-6.704,0-12.14,6.078-12.14,13.55c0,7.49,5.436,13.56,12.14,13.56
+		          c6.712,0,12.149-6.07,12.149-13.56C461.82,95.561,456.384,89.483,449.672,89.483z" style="fill: rgb(4, 4, 4);"></path>
+	            <path class="st0" d="M220.945,347.057c-12.682,4.216-26.202,6.585-40.282,6.585s-27.599-2.369-40.282-6.585
+		          C48.284,362.172,0.088,429.854,0.088,512h180.575h180.575C361.238,429.854,313.046,362.172,220.945,347.057z" style="fill: rgb(4, 4, 4);"></path>
+	            <path class="st0" d="M180.663,324.36c54.588,0,98.836-44.252,98.836-98.836v-28.043c0-54.582-44.248-98.836-98.836-98.836
+		          s-98.836,44.253-98.836,98.836v28.043C81.827,280.108,126.076,324.36,180.663,324.36z" style="fill: rgb(4, 4, 4);"></path>
+              </g>
+              </svg>
+              <div class="dddddd">練習する
+						  </div>
+			        <div class="eeeeee">
+			          投稿を聴きながら（見ながら）<br>
+		            繰り返し練習します<br>			
+		          </div>
+            </div>
+          </div>
 
-	  <div class= "cccccc">
-    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
-    <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
-    <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
-    </svg>
-		<div class="dddddd">音声追加</div>
-		<div class="eeeeee">
-		投稿を確認し、編集機能から<br>
-		ネイティブが音声を<br>
-    追加します<br>
-		</div>
-  </div>
+            <!-- Divider-->
+	          <hr class="my-4" />
 
-
-  <div class= "cccccc">
-<svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="width: 80px; height: 80px; opacity: 1;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#4B4B4B;}
-</style>
-<g>
-	<path class="st0" d="M502.82,60.707c-8.747-18.246-23.112-33.379-40.878-43.99C444.158,6.116,422.918,0.018,400.114,0
-		c-30.364,0.018-58.026,10.846-78.361,28.784c-10.163,8.974-18.508,19.756-24.32,31.923c-5.825,12.148-9.096,25.69-9.096,39.875
-		c-0.009,18.074,5.333,35.08,14.478,49.563c7.811,12.384,18.377,22.977,30.838,31.263l-18.766,46.876l13.551-1.673
-		c46.817-5.854,91.631-23.376,112.916-32.575c20.222-7.218,37.676-19.558,50.241-35.586c12.647-16.138,20.332-36.194,20.318-57.867
-		C511.926,86.397,508.638,72.856,502.82,60.707z M479.844,146.969c-10.521,13.452-25.695,24.325-43.66,30.638l-0.245,0.072
-		l-0.244,0.109c-18.418,7.996-55.674,22.515-95.277,29.408l13.424-33.489l-6.59-3.772c-13.297-7.599-24.184-17.947-31.679-29.824
-		c-7.504-11.914-11.62-25.284-11.633-39.531c0-11.19,2.546-21.819,7.25-31.661c7.042-14.736,19.051-27.626,34.464-36.826
-		c15.419-9.199,34.19-14.663,54.458-14.654c27.065-0.009,51.394,9.715,68.703,25.012c8.648,7.644,15.541,16.645,20.236,26.468
-		c4.699,9.842,7.246,20.471,7.255,31.661C496.298,117.624,490.383,133.491,479.844,146.969z" style="fill: rgb(4, 4, 4);"></path>
-	<path class="st0" d="M356.032,89.483c-6.704,0-12.135,6.078-12.135,13.55c0,7.49,5.432,13.56,12.135,13.56
-		c6.703,0,12.144-6.07,12.144-13.56C368.176,95.561,362.735,89.483,356.032,89.483z" style="fill: rgb(4, 4, 4);"></path>
-	<path class="st0" d="M402.858,89.483c-6.707,0-12.148,6.078-12.148,13.55c0,7.49,5.441,13.56,12.148,13.56
-		c6.704,0,12.14-6.07,12.14-13.56C414.998,95.561,409.562,89.483,402.858,89.483z" style="fill: rgb(4, 4, 4);"></path>
-	<path class="st0" d="M449.672,89.483c-6.704,0-12.14,6.078-12.14,13.55c0,7.49,5.436,13.56,12.14,13.56
-		c6.712,0,12.149-6.07,12.149-13.56C461.82,95.561,456.384,89.483,449.672,89.483z" style="fill: rgb(4, 4, 4);"></path>
-	<path class="st0" d="M220.945,347.057c-12.682,4.216-26.202,6.585-40.282,6.585s-27.599-2.369-40.282-6.585
-		C48.284,362.172,0.088,429.854,0.088,512h180.575h180.575C361.238,429.854,313.046,362.172,220.945,347.057z" style="fill: rgb(4, 4, 4);"></path>
-	<path class="st0" d="M180.663,324.36c54.588,0,98.836-44.252,98.836-98.836v-28.043c0-54.582-44.248-98.836-98.836-98.836
-		s-98.836,44.253-98.836,98.836v28.043C81.827,280.108,126.076,324.36,180.663,324.36z" style="fill: rgb(4, 4, 4);"></path>
-</g>
-</svg>
-
-		<div class="dddddd">練習する</div>
-			<div class="eeeeee">
-			投稿を聴きながら（見ながら）<br>
-		  繰り返し練習します<br>			
-		</div>
-  </div>
-</div>
-
-<!-- Divider-->
-	<hr class="my-4" />
-
-  <% if user_signed_in? %>
-	<div class="aaaaaa">
-      <h1 class="post-title", id="category">Situation</h1>
-			<h6 class="dialog__category">場面別に見る</h6>
-	</div>
-	</div>
+            <% if user_signed_in? %>
+	            <div class="aaaaaa">
+                <h1 class="post-title", id="category">Situation</h1>
+			           <h6 class="dialog__category">場面別に見る</h6>
+	            </div>
+	          </div>
 	
-<div class="category-boxes">
-  <div class="category-box" style="background-image: url('<%= asset_path('work-bg.jpg') %>')">
-    <a href="<%= work_dialogs_path %>">
-      <div class="overlay"></div>
-      <div class="category-title">社 内 の 会 話</div>
-    </a>
-  </div>
-  <div class="category-box" style="background-image: url('<%= asset_path('daily-bg.jpg') %>')">
-    <a href="<%= daily_dialogs_path %>">
-      <div class="overlay"></div>
-      <div class="category-title">接 客 の 会 話</div>
-    </a>
-  </div>
-  <div class="category-box" style="background-image: url('<%= asset_path('quotes-bg.jpg') %>')">
-    <a href="<%= quotes_dialogs_path %>">
-      <div class="overlay"></div>
-      <div class="category-title">問い合わせ対応例</div>
-    </a>
-  </div>
-</div>
+        <div class="category-boxes">
+          <div class="category-box" style="background-image: url('<%= asset_path('work-bg.jpg') %>')">
+            <a href="<%= work_dialogs_path %>">
+              <div class="overlay"></div>
+              <div class="category-title">社 内 の 会 話</div>
+            </a>
+          </div>
+          <div class="category-box" style="background-image: url('<%= asset_path('daily-bg.jpg') %>')">
+            <a href="<%= daily_dialogs_path %>">
+              <div class="overlay"></div>
+              <div class="category-title">接 客 の 会 話</div>
+            </a>
+          </div>
+          <div class="category-box" style="background-image: url('<%= asset_path('quotes-bg.jpg') %>')">
+            <a href="<%= quotes_dialogs_path %>">
+              <div class="overlay"></div>
+              <div class="category-title">問い合わせ対応例</div>
+            </a>
+          </div>
+        </div>
 
-	<% else %>
-	<div class= "aaaaaa">
-    <div class="post-preview">
-      <h1 class="post-title"></h1>
-        <h3 class="post-subtitle"></h3>
-      <p class="post-meta">
-        <h1><%= link_to '계정을 만드시겠어요?', new_user_registration_path %></h1>
-				<h6><%= link_to 'アカウントを作りますか？', new_user_registration_path, class: :dialog__category %></h6>
-      </p>
-	<!-- アカウント作成ボタン -->
-	      <div class="create-account-btn">
-			    <%= link_to 'アカウント作成',new_user_registration_path %>
-		    </div>
+	      <% else %>
+	      <div class= "aaaaaa">
+          <div class="post-preview">
+            <h1 class="post-title"></h1>
+            <h3 class="post-subtitle"></h3>
+            <p class="post-meta">
+              <h1><%= link_to '계정을 만드시겠어요?', new_user_registration_path %></h1>
+				      <h6><%= link_to 'アカウントを作りますか？', new_user_registration_path, class: :dialog__category %></h6>
+            </p>
+	          <!-- アカウント作成ボタン -->
+	          <div class="create-account-btn">
+			        <%= link_to 'アカウント作成',new_user_registration_path %>
+		        </div>
+          </div>
+        </div>
+        <% end %>
+
+        <% if user_signed_in? %> 
+	      <div class="aaaaaa">
+	        <hr class="my-5" />
+            <h1 class="post-title", id="communication">Communication</h1>
+			      <h6 class="dialog__category">コミュニケーション</h6>
+	      </div>
+        <%end%>
+      </div>
+
+      <div class="jump-btn" id="jump">
+        <%= link_to(root_path, class: 'jump-btn') do %>
+		    <%= image_tag 'airplane.png',class: "post-btn-icon" %>
+        <% end %>
       </div>
     </div>
-    <% end %>
 
 
-   <% if user_signed_in? %> 
-	<div class="aaaaaa">
-	<hr class="my-5" />
-      <h1 class="post-title", id="communication">Communication</h1>
-			<h6 class="dialog__category">コミュニケーション</h6>
-	</div>
-  <%end%>
-
-</div>
-
-              <div class="jump-btn" id="jump">
-                <%= link_to(root_path, class: 'jump-btn') do %>
-		            <%= image_tag 'airplane.png',class: "post-btn-icon" %>
-                <% end %>
-
-             	</div>
-							
-          	</div>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+    <!-- 固定の投稿するボタン btn-->
+    <%= render "shared/postbtn"%>
 
 
-
-  <!-- 固定の投稿するボタン btn-->
-  <%= render "shared/postbtn"%>
-
-
-	<!-- Footer-->
+	  <!-- Footer-->
         <%= render "shared/footer"%>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
 				<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
-    </body>
+  </body>
 </html>
