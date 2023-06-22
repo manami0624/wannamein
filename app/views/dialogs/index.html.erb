@@ -14,7 +14,6 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <script src="index.js"></script>
   </head>
 
   <body>
@@ -167,19 +166,19 @@
           <div class="category-box" style="background-image: url('<%= asset_path('work-bg.jpg') %>')">
             <a href="<%= work_dialogs_path %>">
               <div class="overlay"></div>
-              <div class="category-title">社 内 の 会 話</div>
+							<div class="category-title" data-jp="社 内 の 会 話" data-kr="사내">社 内 の 会 話</div>
             </a>
           </div>
           <div class="category-box" style="background-image: url('<%= asset_path('daily-bg.jpg') %>')">
             <a href="<%= daily_dialogs_path %>">
               <div class="overlay"></div>
-              <div class="category-title">接 客 の 会 話</div>
+					    <div class="category-title" data-jp="接 客 の 会 話" data-kr="손님・거래처">接 客 の 会 話</div>
             </a>
           </div>
           <div class="category-box" style="background-image: url('<%= asset_path('quotes-bg.jpg') %>')">
             <a href="<%= quotes_dialogs_path %>">
               <div class="overlay"></div>
-              <div class="category-title">問い合わせ対応例</div>
+              <div class="category-title" data-jp="問い合わせ対応例" data-kr="문의">問い合わせ対応例</div>
             </a>
           </div>
         </div>

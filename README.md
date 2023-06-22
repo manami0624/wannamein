@@ -92,6 +92,9 @@ https://wannamein.onrender.com/ <br>
 ## 2. 人間味・温かみを感じられる挨拶文
 ログインする時間帯によってヘッダーに表示される挨拶の内容が変わるようにしました。
 実際にホテルで働いていた時にお客様にかけていた言葉を書きました。<br>
+[![Image from Gyazo](https://i.gyazo.com/c7c85657c491661b4d85a5fd89e4fd73.jpg)](https://gyazo.com/c7c85657c491661b4d85a5fd89e4fd73)
+
+[![Image from Gyazo](https://i.gyazo.com/f5ab3b72a57d7c099904f6183134eba3.jpg)](https://gyazo.com/f5ab3b72a57d7c099904f6183134eba3)
 
 ## 3. レスポンシブデザイン
 語学系のアプリはスマートフォンやタブレットでみることが多いので、大きさやコンテンツの密度を意識しました。<br>

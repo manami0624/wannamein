@@ -1,8 +1,8 @@
 console.log("読み込み完了");
 
 function updateJumpButtonVisibility() {
-  var jumpBtn = document.getElementById('jump');
-  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const jumpBtn = document.getElementById('jump');
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
   if (scrollTop === 0) {
     jumpBtn.style.display = 'none';
@@ -13,7 +13,7 @@ function updateJumpButtonVisibility() {
 
 window.addEventListener('scroll', updateJumpButtonVisibility);
 
-var jumpBtn = document.getElementById('jump');
+const jumpBtn = document.getElementById('jump');
 jumpBtn.addEventListener('click', function() {
   window.scrollTo({
     top: 0,
@@ -31,3 +31,4 @@ window.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
