@@ -27,6 +27,10 @@
         <div class="col-md-10 col-lg-8 col-xl-7">
 
   <!-- カテゴリーの投稿を表示 -->
+    <div class="dialog-category-posts">
+
+    </div>
+
   <div class="dialog-category-posts">
     <% @work_dialogs.each do |dialog| %>
       <%= render partial: "shared/category", locals: { dialog: dialog } %>
