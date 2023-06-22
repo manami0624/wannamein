@@ -31,7 +31,7 @@ https://wannamein.onrender.com/ <br>
 <br>
 
 # アプリケーションを作成した背景
-## ネイティブの輪に入って働く人のための学習ツールを作りたい
+【ネイティブの輪に入って働く人のための学習ツールを作りたい】
 <br>
 
 ## 解決したい問題
@@ -55,6 +55,11 @@ https://wannamein.onrender.com/ <br>
 
 
 # 実装した機能についての画像やGIFおよびその説明
+投稿機能
+[![投稿機能](https://i.gyazo.com/5d7d1af6cf88366bcb75ffcea5303f7d.gif)](https://gyazo.com/5d7d1af6cf88366bcb75ffcea5303f7d)
+
+ページ内ジャンプ
+[![ページ内ジャンプ](https://i.gyazo.com/38f79f3aca7fb4e9829fc4c1422543f7.gif)](https://gyazo.com/38f79f3aca7fb4e9829fc4c1422543f7)
 
 # 実装予定の機能
 ・感情別のタグ付け<br>
@@ -63,10 +68,10 @@ https://wannamein.onrender.com/ <br>
 <br>
 
 # データベース設計
-[![Image from Gyazo](https://i.gyazo.com/d8eb3ec5f38169d2a53375322c437b16.jpg)](https://gyazo.com/d8eb3ec5f38169d2a53375322c437b16)
+[![データベース設計](https://i.gyazo.com/d8eb3ec5f38169d2a53375322c437b16.jpg)](https://gyazo.com/d8eb3ec5f38169d2a53375322c437b16)
 
 # 画面遷移図
-[![Image from Gyazo](https://i.gyazo.com/002d5362737786bc04bdd50af3485c3e.png)](https://gyazo.com/002d5362737786bc04bdd50af3485c3e)
+[![画面遷移図](https://i.gyazo.com/002d5362737786bc04bdd50af3485c3e.png)](https://gyazo.com/002d5362737786bc04bdd50af3485c3e)
 
 # 開発環境
 ・フロントエンド<br>
