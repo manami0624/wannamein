@@ -114,6 +114,7 @@ https://wannamein.onrender.com/ <br>
 
 ## 3. レスポンシブデザイン
 語学系のアプリはスマートフォンやタブレットでみることが多いので、大きさやコンテンツの密度を意識しました。<br>
+[![Image from Gyazo](https://i.gyazo.com/a885b1d729ed55e405df034171633cc1.gif)](https://gyazo.com/a885b1d729ed55e405df034171633cc1)
 <br>
 
 # テーブル設計
