@@ -27,7 +27,7 @@
           <div class="col-md-10 col-lg-8 col-xl-7">
 						<div class="post-heading">
               
-		  			  	<% current_hour = Time.now.hour %>
+		  			  	<% current_hour = Time.zone.now.hour %>
                 <% if user_signed_in? %>
                   <% if (4..9).include?(current_hour) %>
                     <h1><%= "좋은 아침입니다, #{current_user.name}님!"%><br> 잘 주무셨나요?</h1>							
