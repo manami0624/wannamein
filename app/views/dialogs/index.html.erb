@@ -26,44 +26,44 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-md-10 col-lg-8 col-xl-7">
 						<div class="post-heading">
-		  			  <% current_hour = Time.zone.now.hour %>
+            <% current_hour = Time.zone.now.hour %>
                 <% if user_signed_in? %>
                   <% if (4..9).include?(current_hour) %>
                     <h1><%= "좋은 아침입니다, #{current_user.name}님!"%><br> 잘 주무셨나요?</h1>
-							      <span class="subheading">
-						          <h6><%= "おはようございます, #{current_user.name}さん!よくお休みになられましたか？"%></h6>
-							      </span>
+                    <span class="subheading">
+                    <h6><%= "おはようございます, #{current_user.name}さん!よくお休みになられましたか？"%></h6>
+                    </span>
                   <% elsif (9..11).include?(current_hour) %>
                     <h1><%= "좋은 아침입니다, #{current_user.name}님!"%><br>좋은 하루 보내세요!</h1>
-							      <span class="subheading">
-						          <h6><%= "おはようございます, #{current_user.name}さん!良い1日を!"%></h6>
-							      </span>
+                    <span class="subheading">
+                      <h6><%= "おはようございます, #{current_user.name}さん!良い1日を!"%></h6>
+                    </span>
                   <% elsif (12..17).include?(current_hour) %>
                     <h1><%= "안녕하세요, #{current_user.name}님!"%><br>식사하셨어요?</h1>
-							      <span class="subheading">
-						          <h6><%= "こんにちは, #{current_user.name}さん!お食事されましたか？"%></h6>
-							      </span>
+                    <span class="subheading">
+                    <h6><%= "こんにちは, #{current_user.name}さん!お食事されましたか？"%></h6>
+                    </span>
                   <% elsif (18..21).include?(current_hour) %>
                     <h1><%= "안녕하세요, #{current_user.name}님!"%><br>오늘도 수고하셨습니다.</h1>
-							      <span class="subheading">
-						          <h6><%= "こんばんは, #{current_user.name}さん!今日もお疲れさまでした"%></h6>
-							      </span>
+                    <span class="subheading">
+                    <h6><%= "こんばんは, #{current_user.name}さん!今日もお疲れさまでした"%></h6>
+                    </span>
                   <% else %>
                     <h2><%= "#{current_user.name}님!" %><br>늦은 시간까지 고생 많으셨습니다.</h2>
-							      <span class="subheading">
-						          <h6><%= "#{current_user.name}さん!遅い時間まで本当にお疲れさまでした"%></h6>
-							      </span>
+                    <span class="subheading">
+                      <h6><%= "#{current_user.name}さん!遅い時間まで本当にお疲れさまでした"%></h6>
+                    </span>
                   <% end %>
-       	        <%else%>
+                <%else%>
                   <h1>Wanna Me In?</h1>
-							    <span class="subheading"><h6>원어민（Native Speaker）のように話そう</h6></span>
-					      <%end%>
-							    <h2 class="subheading">
-							      <%= form_with(url: search_dialogs_path, local: true, method: :get, class: "search-form") do |form| %>
+                  <span class="subheading"><h6>원어민（Native Speaker）のように話そう</h6></span>
+                <%end%>
+                  <h2 class="subheading">
+                    <%= form_with(url: search_dialogs_path, local: true, method: :get, class: "search-form") do |form| %>
                     <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
-	                <button class="search-button">
-								    <%= image_tag "search.png", class:"search-icon" %>
-								  </button>
+                  <button class="search-button">
+                    <%= image_tag "search.png", class:"search-icon" %>
+                  </button>
                   <% end %>
 							</h1>
             </div>
@@ -79,33 +79,33 @@
           <div class= "aaaaaa">
             <div class="post-preview">
               <h1 class="post-title", id="usage">'원어민' 사용법</h1>
-			        <h6 class="dialog__category">アプリの使い方</h6>
+              <h6 class="dialog__category">アプリの使い方</h6>
             </div>
-	        </div>
+          </div>
           <div class="bbbbbb">
             <div class= "cccccc">
               <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
               <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
               <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
               </svg>
-		          <div class="dddddd">投稿する
-						  </div>
-			        <div class="eeeeee">
-			          接客や業務時間中に使う<br>
-			          フレーズを投稿します<br>
-		          </div>
+              <div class="dddddd">投稿する
+              </div>
+              <div class="eeeeee">
+              接客や業務時間中に使う<br>
+              フレーズを投稿します<br>
+              </div>
             </div>
-
-	          <div class= "cccccc">
+            
+            <div class= "cccccc">
               <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
               <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
               <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
               </svg>
-		          <div class="dddddd">音声追加
-						  </div>
-		          <div class="eeeeee">
-		            投稿を確認し、編集機能から<br>
-		            ネイティブが音声を<br>
+              <div class="dddddd">音声追加
+              </div>
+              <div class="eeeeee">
+                投稿を確認し、編集機能から<br>
+                ネイティブが音声を<br>
                 追加します<br>
               </div>
             </div>
@@ -116,7 +116,7 @@
               .st0{fill:#4B4B4B;}
               </style>
               <g>
-	            <path class="st0" d="M502.82,60.707c-8.747-18.246-23.112-33.379-40.878-43.99C444.158,6.116,422.918,0.018,400.114,0
+              <path class="st0" d="M502.82,60.707c-8.747-18.246-23.112-33.379-40.878-43.99C444.158,6.116,422.918,0.018,400.114,0
 		          c-30.364,0.018-58.026,10.846-78.361,28.784c-10.163,8.974-18.508,19.756-24.32,31.923c-5.825,12.148-9.096,25.69-9.096,39.875
 		          c-0.009,18.074,5.333,35.08,14.478,49.563c7.811,12.384,18.377,22.977,30.838,31.263l-18.766,46.876l13.551-1.673
 		          c46.817-5.854,91.631-23.376,112.916-32.575c20.222-7.218,37.676-19.558,50.241-35.586c12.647-16.138,20.332-36.194,20.318-57.867
@@ -138,22 +138,24 @@
               </g>
               </svg>
               <div class="dddddd">練習する
-						  </div>
-			        <div class="eeeeee">
-			          投稿を聴きながら（見ながら）<br>
-		            繰り返し練習します<br>			
-		          </div>
+              </div>
+              <div class="eeeeee">
+              投稿を聴きながら（見ながら）<br>
+              繰り返し練習します<br>
+              </div>
             </div>
           </div>
 
             <hr class="my-4" /><!-- Divider-->
 
             <% if user_signed_in? %>
-	            <div class="aaaaaa">
-                <h1 class="post-title", id="category">Situation</h1>
-			           <h6 class="dialog__category">場面別に見る</h6>
-	            </div>
-	          </div>
+            <div class="aaaaaa">
+              <h1 class="post-title" id="category">
+                <%= link_to "Situation", root_path(anchor: "category"), class: "nav-link px-lg-3 py-3 py-lg-4" %>
+              </h1>
+              <h6 class="dialog__category">場面別に見る</h6>
+            </div>
+          </div>
 	
         <div class="category-boxes">
           <div class="category-box" style="background-image: url('<%= asset_path('work-bg.jpg') %>')">
@@ -165,7 +167,7 @@
           <div class="category-box" style="background-image: url('<%= asset_path('daily-bg.jpg') %>')">
             <a href="<%= daily_dialogs_path %>">
               <div class="overlay"></div>
-					    <div class="category-title" data-jp="接 客 の 会 話" data-kr="손님・거래처">接 客 の 会 話<br>(<%= @daily_dialogs.size %>件)</div>
+              <div class="category-title" data-jp="接 客 の 会 話" data-kr="손님・거래처">接 客 の 会 話<br>(<%= @daily_dialogs.size %>件)</div>
             </a>
           </div>
           <div class="category-box" style="background-image: url('<%= asset_path('quotes-bg.jpg') %>')">
@@ -176,29 +178,31 @@
           </div>
         </div>
 
-	      <% else %>
-	      <div class= "aaaaaa">
+        <% else %>
+        <div class= "aaaaaa">
           <div class="post-preview">
             <h1 class="post-title"></h1>
             <h3 class="post-subtitle"></h3>
             <p class="post-meta">
               <h1><%= link_to '계정을 만드시겠어요?', new_user_registration_path %></h1>
-				      <h6><%= link_to 'アカウントを作りますか？', new_user_registration_path, class: :dialog__category %></h6>
+              <h6><%= link_to 'アカウントを作りますか？', new_user_registration_path, class: :dialog__category %></h6>
             </p>
-  <!-- アカウント作成ボタン -->
-	          <div class="create-account-btn">
-			        <%= link_to 'アカウント作成',new_user_registration_path %>
-		        </div>
+            <!-- アカウント作成ボタン -->
+            <div class="create-account-btn">
+              <%= link_to 'アカウント作成',new_user_registration_path %>
+            </div>
           </div>
         </div>
         <% end %>
 
         <% if user_signed_in? %> 
-	      <div class="aaaaaa">
-	        <hr class="my-5" />
-            <h1 class="post-title", id="communication">Communication</h1>
-			      <h6 class="dialog__category">コミュニケーション</h6>
-	      </div>
+        <div class="aaaaaa">
+          <hr class="my-5" />
+            <h1 class="post-title" id="communication">
+            <%= link_to "Communication", root_path(anchor: "communication"), class: "nav-link px-lg-3 py-3 py-lg-4" %>
+            </h1>
+            <h6 class="dialog__category">コミュニケーション</h6>
+        </div>
         <%end%>
       </div>
 
