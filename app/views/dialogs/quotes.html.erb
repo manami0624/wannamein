@@ -8,7 +8,6 @@
         <div class="col-md-10 col-lg-8 col-xl-7">
 					<div class="post-heading">
             <h1>問い合わせ対応例：<%= @quotes_dialogs.size %>件</h1>
-							<%# <span class="subheading"><h5></h5></span> %>
 						<h2 class="subheading">
 							<%= form_with(url: search_dialogs_path, local: true, method: :get, class: "search-form") do |form| %>
               <%= form.text_field :keyword, placeholder: "検索する", class: "search-input" %>
@@ -25,21 +24,21 @@
     <div class="container px-4 px-lg-5">
       <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-7">
-
-  <!-- カテゴリーの投稿を表示 -->
-  <div class="dialog-category-posts">
-    <% @quotes_dialogs.each do |dialog| %>
-      <%= render partial: "shared/category", locals: { dialog: dialog } %>
-    <% end %>
-  </div>
+          <!-- カテゴリーの投稿を表示 -->
+          <div class="dialog-category-posts">
+            <% @quotes_dialogs.each do |dialog| %>
+            <%= render partial: "shared/category", locals: { dialog: dialog } %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <!-- 固定のボタン btn-->
-    <div class="jump-btn" id="jump">
-      <%= link_to(quotes_dialogs_path, class: 'jump-btn') do %>
-		  <%= image_tag 'airplane.png',class: "post-btn-icon" %>
-      <% end %>
-    </div>
-    <%= render "shared/postbtn"%>
+  <div class="jump-btn" id="jump">
+    <%= link_to(quotes_dialogs_path, class: 'jump-btn') { image_tag('airplane.png', class: 'post-btn-icon') } %>
+  </div>
+  <%= render "shared/postbtn"%>
 
   <!-- Footer-->
   <%= render "shared/footer"%>

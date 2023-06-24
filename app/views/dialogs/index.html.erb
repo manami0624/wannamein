@@ -26,11 +26,10 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
           <div class="col-md-10 col-lg-8 col-xl-7">
 						<div class="post-heading">
-              
-		  			  	<% current_hour = Time.zone.now.hour %>
+		  			  <% current_hour = Time.zone.now.hour %>
                 <% if user_signed_in? %>
                   <% if (4..9).include?(current_hour) %>
-                    <h1><%= "좋은 아침입니다, #{current_user.name}님!"%><br> 잘 주무셨나요?</h1>							
+                    <h1><%= "좋은 아침입니다, #{current_user.name}님!"%><br> 잘 주무셨나요?</h1>
 							      <span class="subheading">
 						          <h6><%= "おはようございます, #{current_user.name}さん!よくお休みになられましたか？"%></h6>
 							      </span>
@@ -203,11 +202,10 @@
         <%end%>
       </div>
 
-      <div class="jump-btn" id="jump">
-        <%= link_to(root_path, class: 'jump-btn') do %>
-		    <%= image_tag 'airplane.png',class: "post-btn-icon" %>
-        <% end %>
-      </div>
+  <div class="jump-btn" id="jump">
+    <%= link_to(root_path, class: 'jump-btn') { image_tag('airplane.png', class: 'post-btn-icon') } %>
+  </div>
+
     </div>
 
 

@@ -25,25 +25,21 @@
     <div class="container px-4 px-lg-5">
       <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-7">
-
-  <!-- カテゴリーの投稿を表示 -->
-    <div class="dialog-category-posts">
-
+          <!-- カテゴリーの投稿を表示 -->
+          <div class="dialog-category-posts">
+            <% @work_dialogs.each do |dialog| %>
+            <%= render partial: "shared/category", locals: { dialog: dialog } %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-
-  <div class="dialog-category-posts">
-    <% @work_dialogs.each do |dialog| %>
-      <%= render partial: "shared/category", locals: { dialog: dialog } %>
-    <% end %>
-  </div>
 
   <!-- 固定のボタン btn-->
-    <div class="jump-btn" id="jump">
-      <%= link_to(work_dialogs_path, class: 'jump-btn') do %>
-		  <%= image_tag 'airplane.png',class: "post-btn-icon" %>
-      <% end %>
-    </div>
-    <%= render "shared/postbtn"%>
+  <div class="jump-btn" id="jump">
+    <%= link_to(work_dialogs_path, class: 'jump-btn') { image_tag('airplane.png', class: 'post-btn-icon') } %>
+  </div>
+  <%= render "shared/postbtn"%>
 
   <!-- Footer-->
   <%= render "shared/footer"%>
