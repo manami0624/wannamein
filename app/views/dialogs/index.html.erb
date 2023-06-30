@@ -76,41 +76,41 @@
     <div class="container px-4 px-lg-5">
       <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-7">
-          <div class= "aaaaaa">
+          <div class= "area-a">
             <div class="post-preview">
               <h1 class="post-title", id="usage">'원어민' 사용법</h1>
               <h6 class="dialog__category">アプリの使い方</h6>
             </div>
           </div>
-          <div class="bbbbbb">
-            <div class= "cccccc">
+          <div class="area-b">
+            <div class= "area-c">
               <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
               <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
               <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
               </svg>
-              <div class="dddddd">投稿する
+              <div class="area-d">投稿する
               </div>
-              <div class="eeeeee">
+              <div class="area-e">
               接客や業務時間中に使う<br>
               フレーズを投稿します<br>
               </div>
             </div>
             
-            <div class= "cccccc">
+            <div class= "area-c">
               <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
               <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
               <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
               </svg>
-              <div class="dddddd">音声追加
+              <div class="area-d">音声追加
               </div>
-              <div class="eeeeee">
+              <div class="area-e">
                 投稿を確認し、編集機能から<br>
                 ネイティブが音声を<br>
                 追加します<br>
               </div>
             </div>
 
-            <div class= "cccccc">
+            <div class= "area-c">
               <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="width: 80px; height: 80px; opacity: 1;" xml:space="preserve">
               <style type="text/css">
               .st0{fill:#4B4B4B;}
@@ -137,9 +137,9 @@
 		          s-98.836,44.253-98.836,98.836v28.043C81.827,280.108,126.076,324.36,180.663,324.36z" style="fill: rgb(4, 4, 4);"></path>
               </g>
               </svg>
-              <div class="dddddd">練習する
+              <div class="area-d">練習する
               </div>
-              <div class="eeeeee">
+              <div class="area-e">
               投稿を聴きながら（見ながら）<br>
               繰り返し練習します<br>
               </div>
@@ -149,7 +149,7 @@
             <hr class="my-4" /><!-- Divider-->
 
             <% if user_signed_in? %>
-            <div class="aaaaaa">
+            <div class="area-a">
               <h1 class="post-title" id="category">
                 <%= link_to "Situation", root_path(anchor: "category"), class: "nav-link px-lg-3 py-3 py-lg-4" %>
               </h1>
@@ -179,7 +179,7 @@
         </div>
 
         <% else %>
-        <div class= "aaaaaa">
+        <div class= "area-a">
           <div class="post-preview">
             <h1 class="post-title"></h1>
             <h3 class="post-subtitle"></h3>
@@ -196,7 +196,7 @@
         <% end %>
 
         <% if user_signed_in? %> 
-        <div class="aaaaaa">
+        <div class="area-a">
           <hr class="my-5" />
             <h1 class="post-title" id="communication">
             <%= link_to "Communication", root_path(anchor: "communication"), class: "nav-link px-lg-3 py-3 py-lg-4" %>
