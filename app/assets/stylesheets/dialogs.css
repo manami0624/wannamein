@@ -128,33 +128,6 @@ select {
   margin-bottom: 50px;
 }
 
-.dialog_cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  min-height: calc(100vh - 161px);
-}
-
-.dialog__wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 161px);
-}
-
-.dialog__hedding {
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.translation {
-  font-size: 20px;
-  text-align: center;
-}
-
 .dialog__category {
   display: block;
   font-size: 16px;
@@ -165,22 +138,11 @@ select {
   align-items: center;
 }
 
-.dialog__image {
-  width: 40%;
-  margin: 0 auto;
-  padding: 16px 0;
-}
-
 .dialog__detail {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-bottom: 8px;
-}
-
-.detail__title {
-  font-size: 20px;
-  font-weight: bold;
 }
 
 .dialog__manage {

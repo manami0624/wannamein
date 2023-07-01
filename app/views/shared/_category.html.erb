@@ -3,16 +3,25 @@
   <div class="post-preview">
     <div class="post.html">
       <div class="post.html__top">
-        <h5 class="post-title"><%= link_to dialog.language, dialog_path(dialog.id), method: :get %></h2>
-        <h6 class="post-subtitle"><%= link_to dialog.translation, dialog_path(dialog.id), method: :get %></h3>
+        <h5 class="post-title"><%= dialog.language %></h2>
+        <h6 class="post-subtitle"><%= dialog.translation %></h3>
         <% if dialog.file.present? %>
           <%= audio_tag dialog.file_url, controls: true, style: "width: 100%; height: 20px; margin-top: 10px;" %>
         <% end %>
       </div>
+        <div class="dialog__detail">
+    <%= h(dialog.memo).gsub(/\n|\r|\r\n/, "<br>").html_safe %>
+  </div>
       <div class="post-html__bottom">
         <p><%= dialog.category.name %> | <%= dialog.created_at.strftime("%Y年%m月%d日 %H:%M") %> | by <%= dialog.user.name %></p>
       </div>
     </div>
+  </div>
+    <div class="dialog__manage">
+    <% if user_signed_in? && current_user.id == dialog.user_id %>
+      <%= link_to '編集する', edit_dialog_path(dialog.id), method: :get, class: :dialog__btn %>
+      <%= link_to '削除する', dialog_path(dialog.id), method: :delete, class: :dialog__btn, data: { confirm: '本当に削除しますか？' } %>
+    <% end %>
   </div>
   <!-- Divider-->
   <hr class="my-4" />

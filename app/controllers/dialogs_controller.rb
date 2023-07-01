@@ -1,6 +1,6 @@
 class DialogsController < ApplicationController
-  before_action :set_dialog, only: [:edit, :show, :update]
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :set_dialog, only: [:edit, :update]
+  before_action :move_to_index, except: [:index, :search]
 
   def index
     if params[:category_id].present?
@@ -33,7 +33,7 @@ class DialogsController < ApplicationController
   def create
     @dialog = Dialog.new(dialog_params)
     if @dialog.save
-      redirect_to dialog_path(@dialog.id)
+      redirect_to root_path
     else
       render :new
     end
@@ -44,7 +44,7 @@ class DialogsController < ApplicationController
 
   def update
     if @dialog.update(dialog_params)
-      redirect_to dialog_path(@dialog.id)
+      redirect_to root_path
     end
   end
 
@@ -59,10 +59,6 @@ class DialogsController < ApplicationController
     end
   end
   
-
-  def show
-  end
-
   def search
     @dialogs = Dialog.search(params[:keyword])
     keyword = params[:keyword].to_s.strip

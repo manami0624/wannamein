@@ -78,7 +78,7 @@ https://wannamein.onrender.com/ <br>
 [![データベース設計](https://i.gyazo.com/d8eb3ec5f38169d2a53375322c437b16.jpg)](https://gyazo.com/d8eb3ec5f38169d2a53375322c437b16)
 
 # 画面遷移図
-[![画面遷移図](https://i.gyazo.com/002d5362737786bc04bdd50af3485c3e.png)](https://gyazo.com/002d5362737786bc04bdd50af3485c3e)
+[![画面遷移図](https://i.gyazo.com/728347aa674b0860bcbf7e89b6afa940.png)](https://gyazo.com/728347aa674b0860bcbf7e89b6afa940)
 
 # 開発環境
 ・フロントエンド<br>
