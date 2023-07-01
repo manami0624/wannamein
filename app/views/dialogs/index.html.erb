@@ -195,17 +195,6 @@
         </div>
         <% end %>
 
-        <% if user_signed_in? %> 
-        <div class="area-a">
-          <hr class="my-5" />
-            <h1 class="post-title" id="communication">
-            <%= link_to "Communication", root_path(anchor: "communication"), class: "nav-link px-lg-3 py-3 py-lg-4" %>
-            </h1>
-            <h6 class="dialog__category">コミュニケーション</h6>
-        </div>
-        <%end%>
-      </div>
-
   <div class="jump-btn" id="jump">
     <%= link_to(root_path, class: 'jump-btn') { image_tag('airplane.png', class: 'post-btn-icon') } %>
   </div>
