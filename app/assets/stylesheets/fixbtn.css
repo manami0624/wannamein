@@ -10,13 +10,12 @@
   position: fixed;
   padding: 15px;
   box-sizing: border-box; /* パディングがボタンのサイズに含まれるようにする */
-  display: flex; /* 子要素を中央に配置するためにフレックスボックスを使用 */
-  flex-direction: column; /* 子要素を縦方向に配置する */
+  display: flex;
+  flex-direction: column;
   align-items: center; /* 横方向に中央に配置 */
   justify-content: center; /* 縦方向に中央に配置 */
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* 影の設定 */
 }
-
 
 .post-btn-icon {
   width: 70%;
@@ -32,9 +31,9 @@
   position: fixed;
   padding: 15px;
   box-sizing: border-box; /* パディングがボタンのサイズに含まれるようにする */
-  display: flex; /* 子要素を中央に配置するためにフレックスボックスを使用 */
-  flex-direction: column; /* 子要素を縦方向に配置する */
-  align-items: center; /* 横方向に中央に配置 */
-  justify-content: center; /* 縦方向に中央に配置 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   /* display: none; */
 }
